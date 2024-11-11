@@ -171,6 +171,9 @@
             <a class="nav-link" aria-current="page" href="Contacto.php">Contacto</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="publicaciones.php">Publicaciones</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/Registros/login.php">Iniciar sesión</a>
           </li>
         </ul>
