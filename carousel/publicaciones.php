@@ -588,6 +588,8 @@ text-decoration:
 </div>
 
 <!-- Publicaciones -->
+
+<!-- Publicacion 1 -->
 <div class="post">
 <div class="user-info">
 <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
@@ -605,7 +607,7 @@ Se han encontrado varios objetos en un lugar publico en la biblioteca del "Tunal
 
 </div><button class="claim-button">Este es mi objeto</button>
 </div>
-
+<!-- Publicacion 2 -->
 <div class="post">
 <div class="user-info">
 <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_160054836.png" alt="Profile" />
@@ -624,6 +626,63 @@ Se encontraron varios objetos. Los objetos incluyen:
 
 </div><button class="claim-button">Escribir reseña</button>
 </div>
+<!-- Publicacion 3 -->
+<div class="post">
+  <div class="user-info">
+  <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
+  Ana Paula Menéndez<br>Hace 2 días
+    <span class="status">Estado: No Encontrado</span>
+  </div>
+  <div class="description">
+    Se han encontrado varios objetos en un parque infantil en la colonia "Las Rosas". Entre los objetos hay:
+    <ul>
+      <li>Un llavero en forma de osito con una llave de candado.</li>
+      <li>Dos llaves de auto con llaveros de peluche.</li>
+      <li>Una pulsera de cuentas azules con un dije de estrella.</li>
+    </ul>
+    <img class="found-item-image found-item-image-large" src="https://objetos-perdidos.co/wp-content/uploads/2024/10/elementosperdidos.jpeg" alt="Objetos encontrados" />
+    </div>
+  <button class="claim-button">Este es mi objeto</button>
+</div>
+
+<!-- Publicacion 4 -->
+<div class="post">
+  <div class="user-info">
+    <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
+    Carlos Eduardo López<br>Hace 3 días
+    <span class="status encontrado">Estado: Encontrado</span>
+  </div>
+  <div class="description">
+    Se han encontrado varios objetos en un restaurante del centro comercial "Las Palmas". Entre los objetos hay:
+    <ul>
+      <li>Un llavero en forma de corazón con una llave de casillero.</li>
+      <li>Un estuche de lentes de sol negro.</li>
+      <li>Una billetera gris con tarjetas de crédito y efectivo.</li>
+    </ul> 
+    <img class="found-item-image found-item-image-large" src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_160437076.png" alt="Objetos encontrados" />
+
+</div><button class="claim-button">Escribir reseña</button>
+</div>
+
+<!-- Publicacion 5 -->
+<div class="post">
+  <div class="user-info">
+    <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
+    Lorena Martínez Ramírez<br>Hace 4 días
+    <span class="status">Estado: No Encontrado</span>
+  </div>
+  <div class="description">
+    Se han encontrado varios objetos en la cafetería de la universidad "San Marcos". Entre los objetos hay:
+    <ul>
+      <li>Un llavero de goma con una figura de unicornio.</li>
+      <li>Dos llaves de casa con un llavero de cuerda.</li>
+      <li>Un pequeño monedero azul con dibujos de flores.</li>
+    </ul>
+    <img class="found-item-image found-item-image-large" src="https://objetos-perdidos.co/wp-content/uploads/2024/10/objetos_perdidos3.jpeg" alt="Objetos encontrados" />
+  </div>
+  <button class="claim-button">Este es mi objeto</button>
+</div>
+
 </div>
 
     <!-- /END THE FEATURETTES -->
