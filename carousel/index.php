@@ -1,343 +1,288 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Objetos Perdidos">
+  <title>Objetos Perdidos</title>
+  <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #004a9b;
+    }
+    .carousel-caption {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    .featurette-image {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="index.php">
+          <img src="../assets/img/logoOP.png" alt="" style="width: 30px; height: 30px; margin-right: 10px;">
+          <span class="font-weight-bold">Objetos Perdidos</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Nosotros.php">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contacto.php">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Registros/login.php">Iniciar sesión</a>
+            </li>
+          </ul>
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Perfil
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
+                <li><a class="dropdown-item" href="/Registros/perfil.php">Ver perfil</a></li>
+                <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
+                <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>Objetos Perdidos</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-  .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-  }
-
-  @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-      }
-  }
-
-  .b-example-divider {
-      width: 100%;
-      height: 3rem;
-      background-color: var(--primary-color, rgba(0, 0, 0, .1));
-      border: solid var(--primary-color, rgba(0, 0, 0, .15));
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em var(--primary-color, rgba(0, 0, 0, .1)), inset 0 .125em .5em var(--primary-color, rgba(0, 0, 0, .15));
-  }
-
-  .b-example-vr {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 100vh;
-  }
-
-  .bi {
-      vertical-align: -.125em;
-      fill: var(--primary-color);
-  }
-
-  .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-  }
-
-  .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-  }
-
-  .btn-bd-primary {
-      --bd-violet-bg: var(--primary-color);
-      --bd-violet-rgb: 47, 79, 127;
-
-      --bs-btn-font-weight: 600;
-      --bs-btn-color: var(--secondary-color);
-      --bs-btn-bg: var(--primary-color);
-      --bs-btn-border-color: var(--primary-color);
-      --bs-btn-hover-color: var(--secondary-color);
-      --bs-btn-hover-bg: var(--terciary-color);
-      --bs-btn-hover-border-color: var(--terciary-color);
-      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-      --bs-btn-active-color: var(--secondary-color);
-      --bs-btn-active-bg: var(--primary-color);
-      --bs-btn-active-border-color: var(--primary-color);
-  }
-
-  .bd-mode-toggle {
-      z-index: 1500;
-  }
-
-  .bd-mode-toggle .dropdown-menu .active .bi {
-      display: block !important;
-  }
-</style>
-
-
-    
-    <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
-  </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+  <main>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" style="height: 500px; overflow: hidden;">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../assets/img/img13.jpg" alt="Imagen 1" class="d-block w-100" style="height: 500px; object-fit: cover;">
+          <div class="container">
+            <div class="carousel-caption text-start" style="bottom: 150px;">
+              <h1 class="display-4 fw-bold">¡BIENVENIDO!</h1>
+              <p class="lead">¿Buscas algo perdido o encontraste algo ajeno? Estás en el lugar correcto.</p>
+              <p><a class="btn btn-lg btn-primary" href="../Registros/register.php">Regístrese Hoy</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/img/img20.jpg" alt="Imagen 2" class="d-block w-100" style="height: 500px; object-fit: cover;">
+          <div class="container">
+            <div class="carousel-caption text-white" style="top: 10%; left: 50%; transform: translateX(-10%);">
+              <h1 class="fw-bold" style="font-size: 2.5rem;">Miles de objetos perdidos han vuelto a sus dueños</h1>
+              <p class="lead" style="font-size: 1rem;">Cada día, personas como tú se reencuentran con sus objetos perdidos gracias a nuestra plataforma</p>
+              <p><a class="btn btn-lg btn-primary" href="#photoCarousel">Compruébalo Aquí</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../assets/img/img12.jpg" alt="Imagen 3" class="d-block w-100" style="height: 500px; object-fit: cover;">
+          <div class="container">
+            <div class="carousel-caption text-center" style="top: 40%; left: 50%; transform: translateX(-50%);">
+              <h1 class="display-4 fw-bold">¡No dejes pasar la oportunidad!</h1>
+              <p class="lead">Muchos objetos esperan a sus dueños, y el tuyo podría estar entre ellos. Es el momento de reclamarlos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <header data-bs-theme="dark">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">Objetos Perdidos</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+    <br>
+    <div class="container marketing">
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <img src="../assets/img/proteger.png" alt="Imagen 1" class="" style="width: 100px; height: 100px; object-fit: cover;">
+          <h2 class="fw-bold">Seguridad y Confidencialidad</h2>
+          <p>La plataforma permite una recuperación de objetos segura, resguardando la privacidad y verificando la identidad de quienes reclaman pertenencias.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img src="../assets/img/aumento.png" alt="Imagen 2" class="" style="width: 100px; height: 100px; object-fit: cover;">
+          <h2 class="fw-bold">Aumento de Posibilidades de Recuperación</h2>
+          <p>Con una comunidad activa, tienes mayores probabilidades de que alguien vea tu anuncio y te ayude a recuperar tu objeto perdido.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img src="../assets/img/promocion.png" alt="Imagen 3" class="" style="width: 100px; height: 100px; object-fit: cover;">
+          <h2 class="fw-bold">Facilidad de Comunicación</h2>
+          <p>Facilita el contacto seguro entre quienes encuentran y pierden objetos, evitando intermediarios y mejorando la eficiencia del proceso.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container my-5 py-5">
+  <div class="row justify-content-center text-center">
+    <div class="col-12 mb-4">
+      <h2 class="display-5 fw-bold text-primary">¿Perdiste o encontraste algo?</h2>
+      <p class="lead fw-normal text-muted">Únete a miles de personas que han logrado reencontrarse con sus objetos o ayudar a otros a hacerlo.</p>
+    </div>
+    <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0">
+      <div class="card bg-light border-0 shadow-sm h-100">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center py-5">
+          <div class="mb-4">
+            <img src="../assets/img/dinero.png" alt="Reportar Objeto" class="img-fluid" style="max-width: 80px;">
+          </div>
+          <h3 class="card-title mb-3">Reportar Objeto Perdido</h3>
+          <p class="card-text text-muted mb-4">Ayuda a otros a reencontrar sus pertenencias.</p>
+          <a href="../Registros/register.php" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center px-4 py-3" style="font-size: 1rem; font-weight: bold; border-radius: 8px;">
+            <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+            Reportar
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-5">
+      <div class="card bg-light border-0 shadow-sm h-100">
+        <div class="card-body d-flex flex-column align-items-center justify-content-center py-5">
+          <div class="mb-4">
+            <img src="../assets/img/lupa.png" alt="Publicar Objeto" class="img-fluid" style="max-width: 80px;">
+          </div>
+          <h3 class="card-title mb-3">Publicar Objeto Encontrado</h3>
+          <p class="card-text text-muted mb-4">Ayuda a otros a reencontrar sus pertenencias.</p>
+          <a href="../Registros/register.php" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center px-4 py-3" style="font-size: 1rem; font-weight: bold; border-radius: 8px;">
+            <i class="bi bi-box-seam me-2 fs-5"></i>
+            Publicar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container marketing py-5">
+    <div class="row featurette align-items-center">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-bold mb-4">¿Cómo Funciona?</h2>
+        <p class="lead mb-4">Nuestra plataforma hace fácil y rápido el proceso de reencuentro con tus objetos perdidos en solo tres pasos:</p>
+        
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <h4 class="fw-bold mb-1">1. Regístrate</h4>
+            <p>Abre tu cuenta para acceder a todas nuestras herramientas de búsqueda y publicación.</p>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="Nosotros.php">Nosotros</a>
+          <li class="mb-3">
+            <h4 class="fw-bold mb-1">2. Publica o Busca</h4>
+            <p>Utiliza nuestra plataforma para registrar o buscar objetos extraviados fácilmente.</p>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="Contacto.php">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Registros/login.php">Iniciar sesión</a>
+          <li class="mb-3">
+            <h4 class="fw-bold mb-1">3. Recupera tu objeto</h4>
+            <p>¡Conéctate con quien encontró tu objeto y recupéralo sin complicaciones!</p>
           </li>
         </ul>
-        <form class="d-flex me-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-        <!-- Menú desplegable de perfil -->
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Perfil
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
-              <li><a class="dropdown-item" href="/Registros/perfil.php">Ver perfil</a></li>
-              <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
-              <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>
-            </ul>
-          </li>
-        </ul>
+
+        <p class="mt-4"><a class="btn btn-lg btn-primary" href="#">Comienza ahora</a></p>
+      </div>
+
+      <div class="col-md-5">
+        <img src="../assets/img/img10.jpg" alt="Proceso de recuperación de objetos" 
+            class="featurette-image img-fluid mx-auto rounded-3 shadow-sm" 
+            style="width: 100%; max-width: 450px; height: auto; object-fit: cover;">
       </div>
     </div>
-  </nav>
-</header>
+  </div>
+
+  <br>
 
 
-<main>
-<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" style="max-width: 100%; height: 500px; overflow: hidden;">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="container my-5">
+      <h2 class="text-center mb-4 fw-bold" style="color: #333;">Calificaciones De Nuestros Usuarios</h2>
+      <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-4">
+                <img src="../assets/img/a.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 1">
+              </div>
+              <div class="col-4">
+                <img src="../assets/img/b.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 2">
+              </div>
+              <div class="col-4">
+                <img src="../assets/img/c.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 3">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-4">
+                <img src="../assets/img/d.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 4">
+              </div>
+              <div class="col-4">
+                <img src="../assets/img/e.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 5">
+              </div>
+              <div class="col-4">
+                <img src="../assets/img/f.png" class="d-block w-100
+                rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 6">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen 1" style="width: 100%; height: 500px; object-fit: cover;">
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Perdiste tus cosas?</h1>
-            <p class="opacity-75">Este es el lugar indicado para buscar en nuestra enorme base de objetos perdidos.</p>
-            <p><a class="btn btn-lg btn-primary" href="/Registros/register.php">Regístrese Hoy</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen 2" style="width: 100%; height: 500px; object-fit: cover;">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Otro ejemplo de título.</h1>
-            <p>Contenido de ejemplo para el segundo slide del carrusel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Más información</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen 3" style="width: 100%; height: 500px; object-fit: cover;">
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>Otro más para buena medida.</h1>
-            <p>Contenido de ejemplo para el tercer slide de este carrusel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Ver galería</a></p>
-          </div>
-        </div>
+  </main>
+
+  <footer class="text-center text-white py-4" style="background-color: #333;">
+    <div class="container">
+      <p class="mb-0">&copy; 2024 Dolphin Telecommunication. Todos los derechos reservados.</p>
+      <p class="mb-0">Síguenos en:</p>
+      <div>
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-</div>
-
-
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
-  <div class="container marketing">
-<!-- Three columns of text below the carousel -->
-<div class="row">
-  <div class="col-lg-4 text-center">
-    <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen 1" class="rounded-circle" style="width: 140px; height: 140px; object-fit: cover;">
-    <h2 class="fw-normal">Encabezado</h2>
-    <p>Algunos contenidos de ejemplo representativos para las tres columnas de texto debajo del carrusel. Esta es la primera columna.</p>
-    <p><a class="btn btn-secondary" href="#">Ver detalles &raquo;</a></p>
-  </div><!-- /.col-lg-4 -->
-  <div class="col-lg-4 text-center">
-    <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen 2" class="rounded-circle" style="width: 140px; height: 140px; object-fit: cover;">
-    <h2 class="fw-normal">Encabezado</h2>
-    <p>Otro contenido representativo emocionante. Esta vez, hemos pasado a la segunda columna.</p>
-    <p><a class="btn btn-secondary" href="#">Ver detalles &raquo;</a></p>
-  </div><!-- /.col-lg-4 -->
-  <div class="col-lg-4 text-center">
-    <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen 3" class="rounded-circle" style="width: 140px; height: 140px; object-fit: cover;">
-    <h2 class="fw-normal">Encabezado</h2>
-    <p>Y por último, esta es la tercera columna de contenido representativo.</p>
-    <p><a class="btn btn-secondary" href="#">Ver detalles &raquo;</a></p>
-  </div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
-
-
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading fw-normal lh-1">Encabezado de la primera característica. <span class="text-body-secondary">Te dejará boquiabierto.</span></h2>
-    <p class="lead">Un gran contenido de ejemplo para la primera característica aquí. Imagina una prosa emocionante aquí.</p>
-  </div>
-  <div class="col-md-5">
-    <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen característica" class="featurette-image img-fluid mx-auto" style="width: 500px; height: 500px; object-fit: cover;">
-  </div>
-</div>
-
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-  <div class="col-md-7 order-md-2">
-    <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-    <p class="lead">¿Otra característica? Por supuesto. Más contenido de ejemplo aquí para darte una idea de cómo funcionaría este diseño con contenido real.</p>
-  </div>
-  <div class="col-md-5 order-md-1">
-    <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen característica" class="featurette-image img-fluid mx-auto" style="width: 500px; height: 500px; object-fit: cover;">
-  </div>
-</div>
-
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-  <div class="col-md-7">
-    <h2 class="featurette-heading fw-normal lh-1">Encabezado de la primera característica. <span class="text-body-secondary">Te dejará boquiabierto.</span></h2>
-    <p class="lead">Un gran contenido de ejemplo para la primera característica aquí. Imagina una prosa emocionante aquí.</p>
-  </div>
-  <div class="col-md-5">
-    <img src="/assets/img/5b0afbce-2bbc-4675-aba7-5e10b64dfe1f.jpg" alt="Imagen característica" class="featurette-image img-fluid mx-auto" style="width: 500px; height: 500px; object-fit: cover;">
-  </div>
-</div>
-
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
-
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end">
-      <a href="#">
-          <img src="/assets/img/arriba.png" alt="Ir Arriba" style="width: 30px; height: 30px;">
-      </a>
-  </p>
-    <p>&copy;2024 Objetos Perdidos, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a></p>
   </footer>
-</main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
+
