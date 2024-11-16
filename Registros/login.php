@@ -10,7 +10,7 @@
     <title>Objetos Perdidos</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
+    <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -215,7 +215,7 @@
                     <h2>Iniciar Sesión</h2>
                 </div>
                 <div class="card-body">
-                    <form action="verificar_login.php" method="POST">
+                    <form action="verificarLogin.php" method="POST">
                         <div class="mb-3">
                             <label for="correo" class="form-label">Correo Electrónico:</label>
                             <input type="email" name="correo" id="correo" class="form-control" required>

@@ -10,7 +10,7 @@
     <title>Objetos Perdidos</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
+    <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -167,7 +167,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="../carousel/index.php">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../carousel/Nosotros.php">Nosotros</a>
