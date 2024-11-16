@@ -55,6 +55,9 @@
               <a class="nav-link" href="Nosotros.php">Nosotros</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="dashboard.php">Dashboard</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="Contacto.php">Contacto</a>
             </li>
             <li class="nav-item">
