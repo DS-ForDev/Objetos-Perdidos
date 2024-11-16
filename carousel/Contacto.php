@@ -150,6 +150,9 @@
 
 </body>
 <!-- Contact Form -->
+<hr class="featurette-divider">
+<hr class="featurette-divider">
+<hr class="featurette-divider">
 <div class="container mt-5">
         <h2>Formulario de Contacto</h2>
         <form id="contactForm">
