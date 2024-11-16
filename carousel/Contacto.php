@@ -110,13 +110,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+              <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="vosotros.php">Nosotros</a>
+              <a class="nav-link" href="Nosotros.php">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Contacto.php">Contacto</a>
+              <a class="nav-link active" href="Contacto.php">Contacto</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../Registros/login.php">Iniciar sesión</a>
