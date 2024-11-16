@@ -5,7 +5,9 @@
     --terciary-color: #45a0e6;
  }
 
-
+body{
+    align-items: center;
+}
 
 .fondo {
     top: 101px;
@@ -17,6 +19,7 @@
     width: 900px;
     height: 857px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 200px;
 }
 
 .card {
@@ -27,7 +30,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 363px;
     position: absolute;
-    top: 80px;
+    top: 70px;
     left: 100px;
     text-align: center;
 }
@@ -41,9 +44,9 @@
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 363px;
-    position: absolute;
-    top: 298px;
-    left: 423px;
+    position: relative;
+    top: 180px;
+    left: 380px;
     text-align: center;
 }
 
@@ -54,9 +57,9 @@
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 363px;
-    position: absolute;
-    top: 539px;
-    left: 95px;
+    position: relative !important;
+    top: 140px;
+    left: 55px;
     text-align: center;
 }
 
@@ -93,4 +96,9 @@
     font-size: 1rem; /* Tamaño de fuente */
     margin: 0 10px; /* Espaciado entre los enlaces */
     transition: color 0.3s; /* Suaviza el cambio de color */
+}
+
+.footer .div{
+    position: relative;
+
 }

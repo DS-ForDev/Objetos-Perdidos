@@ -10,91 +10,10 @@
     <title>Objetos Perdidos</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
-    
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-  .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-  }
-
-  @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-      }
-  }
-
-  .b-example-divider {
-      width: 100%;
-      height: 3rem;
-      background-color: var(--primary-color, rgba(0, 0, 0, .1));
-      border: solid var(--primary-color, rgba(0, 0, 0, .15));
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em var(--primary-color, rgba(0, 0, 0, .1)), inset 0 .125em .5em var(--primary-color, rgba(0, 0, 0, .15));
-  }
-
-  .b-example-vr {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 100vh;
-  }
-
-  .bi {
-      vertical-align: -.125em;
-      fill: var(--primary-color);
-  }
-
-  .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-  }
-
-  .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-  }
-
-  .btn-bd-primary {
-      --bd-violet-bg: var(--primary-color);
-      --bd-violet-rgb: 47, 79, 127;
-
-      --bs-btn-font-weight: 600;
-      --bs-btn-color: var(--secondary-color);
-      --bs-btn-bg: var(--primary-color);
-      --bs-btn-border-color: var(--primary-color);
-      --bs-btn-hover-color: var(--secondary-color);
-      --bs-btn-hover-bg: var(--terciary-color);
-      --bs-btn-hover-border-color: var(--terciary-color);
-      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-      --bs-btn-active-color: var(--secondary-color);
-      --bs-btn-active-bg: var(--primary-color);
-      --bs-btn-active-border-color: var(--primary-color);
-  }
-
-  .bd-mode-toggle {
-      z-index: 1500;
-  }
-
-  .bd-mode-toggle .dropdown-menu .active .bi {
-      display: block !important;
-  }
-</style>
+<link rel="stylesheet" href="../assets/dist/css/styles.css">
 </head>
 <body>
   <header>
@@ -195,7 +114,7 @@
 
 
   <!-- FOOTER -->
-  <footer class="container">
+  <footer class="barra">
     <p class="float-end">
       <a href="#">
           <img src="/assets/img/arriba.png" alt="Ir Arriba" style="width: 30px; height: 30px;">
