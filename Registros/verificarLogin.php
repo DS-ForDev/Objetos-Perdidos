@@ -3,9 +3,9 @@ session_start();
 
 // Conexión a la base de datos
 $host = "localhost"; // Cambia esto según tu configuración
-$user = "tu_usuario";
-$password = "tu_contraseña";
-$database = "nombre_base_datos";
+$user = "root";
+$password = "";
+$database = "objetosperdidos";
 
 $conn = new mysqli($host, $user, $password, $database);
 
@@ -18,7 +18,7 @@ $correo = $_POST['correo'];
 $contrasena = $_POST['contrasena'];
 
 // Consulta para verificar el correo y la contraseña
-$sql = "SELECT * FROM usuarios WHERE correo = ?";
+$sql = "SELECT * FROM usuario WHERE correo = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $correo);
 $stmt->execute();
@@ -29,7 +29,7 @@ if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
 
     // Verificar la contraseña encriptada
-    if (password_verify($contrasena, $user['contrasena'])) {
+    if (password_verify($contrasena, $user['contraseña'])) {
         $_SESSION['user_id'] = $user['id']; // Guardar el ID del usuario en la sesión
         $_SESSION['correo'] = $user['correo'];
         header("Location: index.php"); // Redireccionar al usuario al inicio

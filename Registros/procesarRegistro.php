@@ -1,29 +1,40 @@
 <?php
-include 'BD.php';
+include 'BD.php'; // Asegúrate de que este archivo establece correctamente la conexión a la base de datos.
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $tipo_documento = $_POST['tipo_documento'];
-    $documento = $_POST['documento'];
-    $nombres = $_POST['nombres'];
-    $apellidos = $_POST['apellidos'];
-    $telefono = $_POST['telefono'];
+    // Recibir y validar los datos del formulario
+    $id_rol = intval($_POST['id_rol']); // Asegúrate de convertir a entero
+    $nombre_usuario = $_POST['nombre_usuario'];
     $correo = $_POST['correo'];
-    $contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
-    $direccion = $_POST['direccion'];
-
-    $sql = "INSERT INTO usuarios (tipo_documento, documento, nombres, apellidos, telefono, correo, contrasena, direccion) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT); // Encriptar la contraseña
+    $direccion = $_POST['direccion'] ?? null; // Opcional
+    $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? null; // Opcional
+    $telefono = $_POST['telefono'] ?? null; // Opcional
     
-    $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("ssssssss", $tipo_documento, $documento, $nombres, $apellidos, $telefono, $correo, $contrasena, $direccion);
+    // Preparar la consulta SQL
+    $sql = "INSERT INTO Usuario (ID_rol, Nombre_de_Usuario, Correo, Contraseña, Direccion, Fecha_de_Nacimiento, Telefono) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
     
-    if ($stmt->execute()) {
-        echo "Registro exitoso";
+    // Preparar la consulta
+    if ($stmt = $conexion->prepare($sql)) {
+        // Vincular parámetros
+        $stmt->bind_param("issssss", $id_rol, $nombre_usuario, $correo, $contrasena, $direccion, $fecha_nacimiento, $telefono);
+        
+        // Ejecutar la consulta
+        if ($stmt->execute()) {
+            echo "Registro exitoso";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+        
+        // Cerrar la declaración
+        $stmt->close();
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error al preparar la consulta: " . $conexion->error;
     }
-
-    $stmt->close();
+    
+    // Cerrar la conexión
     $conexion->close();
 }
 ?>
+

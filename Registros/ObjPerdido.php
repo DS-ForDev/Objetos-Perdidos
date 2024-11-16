@@ -10,7 +10,7 @@
     <title>Objetos Perdidos</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
+    <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -168,7 +168,7 @@
               <a class="nav-link active" aria-current="page" href="../carousel/index.php">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../carousel/1Nosotros.php">Nosotros</a>
+              <a class="nav-link" href="../carousel/Nosotros.php">Nosotros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../carousel/Contacto.php">Contacto</a>
@@ -209,7 +209,7 @@
         <div class="col-md-8 mx-auto">
             <div class="card shadow-sm p-4">
                 <h2 class="card-title mb-4 text-center">Publicar Objeto Perdido/Encontrado</h2>
-                <form action="ruta-a-tu-script-de-procesamiento.php" method="POST" enctype="multipart/form-data">
+                <form action="./procesarObjPerdido.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="categoria" class="form-label">Categoría</label>
                         <select class="form-select" id="categoria" name="categoria" required>

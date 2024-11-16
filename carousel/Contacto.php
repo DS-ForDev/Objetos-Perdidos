@@ -9,6 +9,7 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>Objetos Perdidos</title>
 
+    <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
@@ -149,6 +150,9 @@
 
 </body>
 <!-- Contact Form -->
+<hr class="featurette-divider">
+<hr class="featurette-divider">
+<hr class="featurette-divider">
 <div class="container mt-5">
         <h2>Formulario de Contacto</h2>
         <form id="contactForm">
