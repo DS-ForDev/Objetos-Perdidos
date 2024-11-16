@@ -52,7 +52,7 @@
               <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="1Nosotros.php">Nosotros</a>
+              <a class="nav-link" href="Nosotros.php">Nosotros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Contacto.php">Contacto</a>

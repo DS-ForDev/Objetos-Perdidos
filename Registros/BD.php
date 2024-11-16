@@ -1,8 +1,8 @@
 <?php
 $servidor = "localhost";
-$usuario = "tu_usuario";
-$contrasena = "tu_contrasena";
-$basedatos = "tu_base_de_datos";
+$usuario = "root";
+$contrasena = "";
+$basedatos = "ObjetosPerdidos";
 
 $conexion = new mysqli($servidor, $usuario, $contrasena, $basedatos);
 
