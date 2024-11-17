@@ -1,3 +1,62 @@
+<?php
+try {
+    // Conexión a la base de datos
+    $pdo = new PDO('mysql:host=localhost;dbname=ObjetosPerdidos', 'tu_usuario', 'tu_contraseña');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Datos recibidos desde el formulario
+    $nombre = $_POST['nombre']; // Nombre de usuario
+    $email = $_POST['correo']; // Correo del usuario
+    $password = $_POST['contraseña']; // Contraseña en texto plano
+    $direccion = $_POST['direccion'] ?? null; // Dirección opcional
+    $fechaNacimiento = $_POST['fechanacimiento'] ?? null; // Fecha opcional
+    $telefono = $_POST['telefono'] ?? null; // Teléfono opcional
+
+    // Validar datos importantes (por ejemplo, nombre y correo no deben estar vacíos)
+    if (empty($nombre) || empty($email) || empty($password)) {
+        throw new Exception("Por favor, llena todos los campos obligatorios (Nombre, Email, Contraseña).");
+    }
+
+    // Verifica que el rol 'Usuario' exista en la base de datos
+    $stmtRol = $pdo->prepare("SELECT ID_rol FROM roles WHERE Nombre_rol = :nombreRol");
+    $stmtRol->execute(['nombreRol' => 'Usuario']); // Rol predeterminado para nuevos usuarios
+    $idRol = $stmtRol->fetchColumn();
+
+    if (!$idRol) {
+        throw new Exception("No se encontró el rol 'Usuario'. Asegúrate de que exista en la tabla roles.");
+    }
+
+    // Encriptar la contraseña
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+    // Preparar la consulta de inserción
+    $stmt = $pdo->prepare(
+        "INSERT INTO Usuario 
+        (ID_rol, Nombre_de_Usuario, Correo, Contraseña, Direccion, Fecha_de_Nacimiento, Telefono) 
+        VALUES 
+        (:idRol, :nombre, :email, :password, :direccion, :fechaNacimiento, :telefono)"
+    );
+
+    // Ejecutar la consulta
+    $stmt->execute([
+        'idRol' => $idRol, // ID del rol (en este caso, 'Usuario')
+        'nombre' => $nombre,
+        'email' => $email,
+        'password' => $passwordHash,
+        'direccion' => $direccion,
+        'fechaNacimiento' => $fechaNacimiento,
+        'telefono' => $telefono,
+    ]);
+
+    echo "Usuario registrado exitosamente.";
+} catch (PDOException $e) {
+    echo "Error en la base de datos: " . $e->getMessage();
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
@@ -258,43 +317,43 @@
 <hr class="featurette-divider">
 <hr class="featurette-divider">
 
-<body>  
+<body>
     <div class="container">
         <h2>Regístrate</h2>
         <p style="color: var(--secondary-color);">Ingresa tu información para poder ingresar</p>
         <div class="form-container">
-            <form>
+            <form method="POST" action="procesarRegistro.php">
                 <label for="username">Nombre de usuario:</label>
-                <input type="text" id="username" placeholder="Ingresa tu nombre de usuario...">
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre de usuario..." required>
 
                 <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" placeholder="Ingresa tu correo electrónico...">
+                <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico..." required>
 
                 <label for="birthdate">Fecha de nacimiento:</label>
-                <input type="date" id="birthdate">
+                <input type="date" id="fechanacimiento" name="fechanacimiento" required>
 
                 <label for="phone">Teléfono:</label>
-                <input type="text" id="phone" placeholder="Ingresa tu número de teléfono...">
+                <input type="text" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono..." required>
 
                 <label for="address">Dirección:</label>
-                <input type="text" id="address" placeholder="Ingresa tu dirección...">
+                <input type="text" id="direccion" name="direccion" placeholder="Ingresa tu dirección..." required>
 
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" placeholder="Escribe una contraseña segura...">
+                <input type="password" id="contraseña" name="contraseña" placeholder="Escribe una contraseña segura..." required>
 
                 <label for="confirm-password">Confirma la contraseña:</label>
-                <input type="password" id="confirm-password" placeholder="Vuelve a escribir la contraseña...">
+                <input type="password" id="confirmarcontraseña" name="confirm-password" placeholder="Vuelve a escribir la contraseña..." required>
 
                 <div class="terms">
-                    <input type="checkbox" id="terms">
-                    <label for="terms">Acepto los Términos y Condiciones</label>
-                </div>
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">Acepto los Términos y Condiciones</label>
+    </div>
 
                 <button type="submit" class="submit-btn">Registrarse</button>
             </form>
         </div>
-        
     </div>
+  </div>
 </body>
 
     <hr class="featurette-divider">
