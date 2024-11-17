@@ -18,82 +18,135 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-  .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-  }
 
-  @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-      }
-  }
+  /*style de registros*/
 
-  .b-example-divider {
-      width: 100%;
-      height: 3rem;
-      background-color: var(--primary-color, rgba(0, 0, 0, .1));
-      border: solid var(--primary-color, rgba(0, 0, 0, .15));
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em var(--primary-color, rgba(0, 0, 0, .1)), inset 0 .125em .5em var(--primary-color, rgba(0, 0, 0, .15));
-  }
+  :root {
+            --primary-color: #2f4f7f;
+            --secondary-color: #f7f7f7;
+            --terciary-color: #45a0e6;
+        }
 
-  .b-example-vr {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 100vh;
-  }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
 
-  .bi {
-      vertical-align: -.125em;
-      fill: var(--primary-color);
-  }
+        .header {
+            width: 100%;
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            color: var(--secondary-color);
+            text-align: center;
+        }
 
-  .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-  }
+        .header img {
+            width: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
 
-  .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-  }
+        .header a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
 
-  .btn-bd-primary {
-      --bd-violet-bg: var(--primary-color);
-      --bd-violet-rgb: 47, 79, 127;
+        .container {
+            width: 400px;
+            background-color: var(--terciary-color);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-top: 20px;
+        }
 
-      --bs-btn-font-weight: 600;
-      --bs-btn-color: var(--secondary-color);
-      --bs-btn-bg: var(--primary-color);
-      --bs-btn-border-color: var(--primary-color);
-      --bs-btn-hover-color: var(--secondary-color);
-      --bs-btn-hover-bg: var(--terciary-color);
-      --bs-btn-hover-border-color: var(--terciary-color);
-      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-      --bs-btn-active-color: var(--secondary-color);
-      --bs-btn-active-bg: var(--primary-color);
-      --bs-btn-active-border-color: var(--primary-color);
-  }
+        .form-container {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-  .bd-mode-toggle {
-      z-index: 1500;
-  }
+        h2 {
+            color: var(--secondary-color);
+            background-color: var(--primary-color);
+            padding: 10px;
+            border-radius: 25px;
+            margin: -40px auto 20px;
+            width: 70%;
+            font-size: 18px;
+        }
 
-  .bd-mode-toggle .dropdown-menu .active .bi {
-      display: block !important;
-  }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .terms input {
+            margin-right: 5px;
+        }
+
+        .submit-btn {
+            background-color: var(--terciary-color);
+            color: var(--secondary-color);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: var(--primary-color);
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
 </style>
 
 
@@ -205,72 +258,43 @@
 <hr class="featurette-divider">
 <hr class="featurette-divider">
 
-<body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header text-center bg-primary text-white">
-                        <h2>Registro de Usuario</h2>
-                    </div>
-                    <div class="card-body">
-                        <form action="procesarregistro.php" method="POST">
-                            <div class="mb-3">
-                                <label for="tipo_documento" class="form-label">Tipo de Documento:</label>
-                                <select name="tipo_documento" id="tipo_documento" class="form-select" required>
-                                    <option value="CC">Cédula de Ciudadanía</option>
-                                    <option value="TI">Tarjeta de Identidad</option>
-                                    <option value="CE">Cédula de Extranjería</option>
-                                    <option value="PP">Pasaporte</option>
-                                </select>
-                            </div>
+<body>  
+    <div class="container">
+        <h2>Regístrate</h2>
+        <p style="color: var(--secondary-color);">Ingresa tu información para poder ingresar</p>
+        <div class="form-container">
+            <form>
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" placeholder="Ingresa tu nombre de usuario...">
 
-                            <div class="mb-3">
-                                <label for="documento" class="form-label">Documento:</label>
-                                <input type="text" name="documento" id="documento" class="form-control" required>
-                            </div>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" placeholder="Ingresa tu correo electrónico...">
 
-                            <div class="mb-3">
-                                <label for="nombres" class="form-label">Nombres:</label>
-                                <input type="text" name="nombres" id="nombres" class="form-control" required>
-                            </div>
+                <label for="birthdate">Fecha de nacimiento:</label>
+                <input type="date" id="birthdate">
 
-                            <div class="mb-3">
-                                <label for="apellidos" class="form-label">Apellidos:</label>
-                                <input type="text" name="apellidos" id="apellidos" class="form-control" required>
-                            </div>
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone" placeholder="Ingresa tu número de teléfono...">
 
-                            <div class="mb-3">
-                                <label for="telefono" class="form-label">Teléfono:</label>
-                                <input type="tel" name="telefono" id="telefono" class="form-control" required>
-                            </div>
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" placeholder="Ingresa tu dirección...">
 
-                            <div class="mb-3">
-                                <label for="correo" class="form-label">Correo Electrónico:</label>
-                                <input type="email" name="correo" id="correo" class="form-control" required>
-                            </div>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" placeholder="Escribe una contraseña segura...">
 
-                            <div class="mb-3">
-                                <label for="contrasena" class="form-label">Contraseña:</label>
-                                <input type="password" name="contrasena" id="contrasena" class="form-control" required>
-                            </div>
+                <label for="confirm-password">Confirma la contraseña:</label>
+                <input type="password" id="confirm-password" placeholder="Vuelve a escribir la contraseña...">
 
-                            <div class="mb-3">
-                                <label for="direccion" class="form-label">Dirección:</label>
-                                <input type="text" name="direccion" id="direccion" class="form-control" required>
-                            </div>
-
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">Registrar</button>
-                            </div>
-                            <p class="text-center mt-3">
-                            </p>¿Ya tienes una cuenta? <a href="login.php" class="link-primary">Iniciar Sesión</a>
-                        </form>
-                    </div>
+                <div class="terms">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">Acepto los Términos y Condiciones</label>
                 </div>
-            </div>
+
+                <button type="submit" class="submit-btn">Registrarse</button>
+            </form>
         </div>
-    </div>
+        
+    </div>
 </body>
 
     <hr class="featurette-divider">
@@ -281,14 +305,12 @@
 
 
   <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end">
-      <a href="#">
-          <img src="/assets/img/arriba.png" alt="Ir Arriba" style="width: 30px; height: 30px;">
-      </a>
-  </p>
-    <p>&copy;2024 Objetos Perdidos, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a></p>
-  </footer>
+  <div class="footer">
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
 </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 

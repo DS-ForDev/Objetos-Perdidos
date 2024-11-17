@@ -61,6 +61,9 @@
               <a class="nav-link" href="Contacto.php">Contacto</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="publicaciones.php">publicaciones</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="../Registros/login.php">Iniciar sesión</a>
             </li>
           </ul>
