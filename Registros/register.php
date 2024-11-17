@@ -345,7 +345,7 @@ try {
                 <input type="password" id="confirmarcontraseña" name="confirm-password" placeholder="Vuelve a escribir la contraseña..." required>
 
                 <div class="terms">
-        <input type="checkbox" id="terms" name="terms" required>
+        <input type="checkbox" id="terms" name="terms">
         <label for="terms">Acepto los Términos y Condiciones</label>
     </div>
 

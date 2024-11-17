@@ -285,18 +285,17 @@
         <p style="color: var(--secondary-color);">¿Es tu primera vez? <a href="register.php" style="color: rgba(61, 0, 141, 0.862);">Regístrate</a></p>
         <div class="form-container">
         <form action="verificarLogin.php" method="POST">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" placeholder="Ingresa tu correo electrónico...">
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="correo" placeholder="Ingresa tu correo electrónico..." required>
 
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" placeholder="Ingresa tu contraseña...">
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="contraseña" placeholder="Ingresa tu contraseña..." required>
 
-                <div class="forgot-password">
-                    <a href="#">¿Olvidaste tu contraseña? Recuperar contraseña</a>
-                </div>
+    <div class="forgot-password">
+        <a href="#">¿Olvidaste tu contraseña? Recuperar contraseña</a>
+    </div>
 
-                <button type="submit" class="submit-btn">Iniciar Sesión</button>
-
+    <button type="submit" class="submit-btn">Iniciar Sesión</button>
                 <div class="login-options">
                     O ingresa con
                 </div>
