@@ -120,7 +120,7 @@ try {
         }
 
         .container {
-            width: 400px;
+            width: 550px;
             background-color: var(--terciary-color);
             padding: 30px;
             border-radius: 15px;
