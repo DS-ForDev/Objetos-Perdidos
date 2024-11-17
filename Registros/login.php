@@ -284,7 +284,7 @@
         <h2>Iniciar Sesión</h2>
         <p style="color: var(--secondary-color);">¿Es tu primera vez? <a href="register.php" style="color: rgba(61, 0, 141, 0.862);">Regístrate</a></p>
         <div class="form-container">
-            <form>
+        <form action="verificarLogin.php" method="POST">
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" placeholder="Ingresa tu correo electrónico...">
 
