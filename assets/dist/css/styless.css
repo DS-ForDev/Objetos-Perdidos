@@ -40,7 +40,7 @@ body {
     color: white;
     height: 100vh; /* Ocupa toda la altura del viewport */
     position: fixed; /* Se mantiene fija en la parte izquierda */
-    top: 0;
+    top: 48px;
     left: 0
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .card {
-    padding: 35px;
+    padding: 33px;
     border-radius: 10px;
     color: white;
     text-align: center;
@@ -93,19 +93,22 @@ body {
 }
 
 .card p {
-    font-size: 48px;
+    font-size: 28px;
     margin-bottom: 10px;
     position: relative;
-    right: 95px;
+    
 }
 
 .card button {
-    padding: 10px 20px;
+    padding: 4px 20px;
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
     border-radius: 5px;
     color: white;
     cursor: pointer;
+    width: 200px;
+    position: relative;
+    left: 40px;
 }
 
 .card.blue { background-color: #007bff; }
@@ -166,6 +169,11 @@ body {
 
 }
 
+.dropdown-btn:hover{
+    background-color: #1d4e89;
+    border-radius: 5px;
+}
+
 .dropdown-content {
     width: 250px;
     background-color: #2c73c1;
@@ -188,12 +196,20 @@ body {
     cursor: pointer;
     width: 100%;
 }
+ .submenu-btn:hover{
+    background-color: #1d4e89;
+    border-radius: 5px;
+
+ }
+
 
 .submenu-content {
     display: none;
     padding-left: 15px;
     background-color: #2c73c1;
 }
+
+
 
 .submenu-content a {
     display: block;
