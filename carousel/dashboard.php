@@ -6,6 +6,7 @@
     <title>Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/dist/css/styless.css">
     
 </head>
@@ -70,7 +71,7 @@
     
             <!-- Menú desplegable de Reports -->
             <div class="dropdown">
-                <button class="dropdown-btn">Reports</button>
+                <button class="dropdown-btn">Reportes</button>
                 <div class="dropdown-content">
                     <!-- Subcategoría Objetos Perdidos -->
                     <div class="submenu">
@@ -103,27 +104,27 @@
         <!-- Tarjetas de estadísticas -->
         <section class="cards">
             <div class="card blue">
-                <p>75</p>
+                <p>Objetos Perdidos</p>
                 <button>Ver más</button>
             </div>
             <div class="card red">
-                <p>75</p>
+                <p>Objetos Encontrados</p>
                 <button>Ver más</button>
             </div>
             <div class="card green">
-                <p>75</p>
+                <p>Gestion de Usuarios</p>
                 <button>Ver más</button>
             </div>
             <div class="card orange">
-                <p>75</p>
+                <p>Publicaciones</p>
                 <button>Ver más</button>
             </div>
             <div class="card teal">
-                <p>75</p>
+                <p>Mensajes</p>
                 <button>Ver más</button>
             </div>
             <div class="card yellow">
-                <p>75</p>
+                <p>Gestion de Objetos</p>
                 <button>Ver más</button>
             </div>
         </section>
@@ -237,21 +238,20 @@
     </main>
 
  <!-- Pie de página -->
-    <footer class="text-center text-white py-4" style="background-color: #333;">
-        <div class="container">
-        <p class="mb-0">&copy; 2024 Dolphin Telecommunication. Todos los derechos reservados.</p>
-        <p class="mb-0">Síguenos en:</p>
-        <div>
-            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
-        </di>
-        </div>
-    </footer>
-  
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
+ <footer class="text-center text-white py-4" style="background-color: #333;">
+    <div class="container">
+      <p class="mb-0">&copy; 2024 Dolphin Telecommunication. Todos los derechos reservados.</p>
+      <p class="mb-0">Síguenos en:</p>
+      <div>
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/script.js"></script>  
    
 </body>
