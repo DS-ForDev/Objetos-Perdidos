@@ -573,14 +573,12 @@ text-decoration:
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
                 <li><a class="dropdown-item" href="/Registros/perfil.php"> Ver Perfil</a></li>
                 <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
-                <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
-                <li><a class="dropdown-item" href="/Carousel/dashboard.php">Dashboard</a></li>
+                <li><a class="dropdown-item" href="../Registros/ObjPerdido.php">Publicar</a></li>
+                <li><a class="dropdown-item" href="../Carousel/dashboard.php">Dashboard</a></li>
                 <li><hr class="dropdown-divider"></li>
-<<<<<<< HEAD
+
                 <li><a class="dropdown-item" href="../Carousel/index.php">Cerrar sesión</a></li>
-=======
-                <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>
->>>>>>> 0cb94dd264c3aa19b6ccd3e646eba1eb6892e77f
+
               </ul>
             </li>
           </ul>
@@ -598,11 +596,9 @@ text-decoration:
 
     <div class="lost-found-container">
 <!-- SecciC3n de busqueda -->
-<<<<<<< HEAD
-<br><br>
-=======
 
->>>>>>> 0cb94dd264c3aa19b6ccd3e646eba1eb6892e77f
+<br><br>
+
 <!-- Botones principales -->
 <div class="button-section">
 <button class="primary-button">¿Perdiste un objeto? Publícalo aquí</button>

@@ -79,10 +79,10 @@ if (isset($_SESSION['nombre'])) {
               <p><?php echo htmlspecialchars($Nombre_de_Usuario); ?></p>
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
-                <li><a class="dropdown-item bi bi-file-person" href="/Registros/perfil.php">  </a>Ver perfil</li>
+                <li><a class="dropdown-item bi bi-file-person" href="../Registros/perfil_usuario.php">  </a>Ver perfil</li>
                 <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
-                <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
-                <li><a class="dropdown-item" href="/Carousel/dashboard.php">Dashboard</a></li>
+                <li><a class="dropdown-item" href="../Registros/ObjPerdido.php">Publicar</a></li>
+                <li><a class="dropdown-item" href="../Carousel/dashboard.php">Dashboard</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="index.php">Cerrar sesión</a></li>
               </ul>
@@ -102,23 +102,23 @@ if (isset($_SESSION['nombre'])) {
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../assets/img/img13.jpg" alt="Imagen 1" class="d-block w-100" style="height: 500px; object-fit: cover;">
+          <img src="../assets/img/img17.jpg" alt="Imagen 1" class="d-block w-100" style="height: 500px; object-fit: cover;">
           <div class="container">
             <div class="carousel-caption text-start" style="bottom: 150px;">
             <h1 class="display-4 fw-bold" style="display: inline; font-family: inherit;">
                   ¡BIENVENIDO <span style="font-family: inherit;"><?php echo htmlspecialchars($Nombre_de_Usuario); ?>!</span>
             </h1>
-              <p class="lead">¿Buscas algo perdido o encontraste algo ajeno? Estás en el lugar correcto.</p>       
+              <p class="lead">¿Estas listo para encontrar tus pertenencias? Publica ya, tus objetos te estan esperando.</p>       
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/img20.jpg" alt="Imagen 2" class="d-block w-100" style="height: 500px; object-fit: cover;">
+          <img src="../assets/img/img6.jpg" alt="Imagen 2" class="d-block w-100" style="height: 500px; object-fit: cover;">
           <div class="container">
             <div class="carousel-caption text-white" style="top: 10%; left: 50%; transform: translateX(-10%);">
-              <h1 class="fw-bold" style="font-size: 2.5rem;">Miles de objetos perdidos han vuelto a sus dueños</h1>
-              <p class="lead" style="font-size: 1rem;">Cada día, personas como tú se reencuentran con sus objetos perdidos gracias a nuestra plataforma</p>
-              <p><a class="btn btn-lg btn-primary" href="#photoCarousel">Compruébalo Aquí</a></p>
+              <h1 class="fw-bold" style="font-size: 2.5rem;">Miles de objetos perdidos estan buscando su dueño</h1>
+              <p class="lead" style="font-size: 1rem;">Ingresa a nuestra seccion de publicaciones para ver si alguien ya encontro tu objeto</p>
+              <p><a class="btn btn-lg btn-primary" href="../carousel/publicaciones.php">Busca Aqui</a></p>
             </div>
           </div>
         </div>
@@ -141,26 +141,7 @@ if (isset($_SESSION['nombre'])) {
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <br>
-    <div class="container marketing">
-      <div class="row">
-        <div class="col-lg-4 text-center">
-          <img src="../assets/img/proteger.png" alt="Imagen 1" class="" style="width: 100px; height: 100px; object-fit: cover;">
-          <h2 class="fw-bold">Seguridad y Confidencialidad</h2>
-          <p>La plataforma permite una recuperación de objetos segura, resguardando la privacidad y verificando la identidad de quienes reclaman pertenencias.</p>
-        </div>
-        <div class="col-lg-4 text-center">
-          <img src="../assets/img/aumento.png" alt="Imagen 2" class="" style="width: 100px; height: 100px; object-fit: cover;">
-          <h2 class="fw-bold">Aumento de Posibilidades de Recuperación</h2>
-          <p>Con una comunidad activa, tienes mayores probabilidades de que alguien vea tu anuncio y te ayude a recuperar tu objeto perdido.</p>
-        </div>
-        <div class="col-lg-4 text-center">
-          <img src="../assets/img/promocion.png" alt="Imagen 3" class="" style="width: 100px; height: 100px; object-fit: cover;">
-          <h2 class="fw-bold">Facilidad de Comunicación</h2>
-          <p>Facilita el contacto seguro entre quienes encuentran y pierden objetos, evitando intermediarios y mejorando la eficiencia del proceso.</p>
-        </div>
-      </div>
-    </div>
+
     <div class="container my-5 py-5">
   <div class="row justify-content-center text-center">
     <div class="col-12 mb-4">
@@ -175,7 +156,7 @@ if (isset($_SESSION['nombre'])) {
           </div>
           <h3 class="card-title mb-3">Reportar Objeto Perdido</h3>
           <p class="card-text text-muted mb-4">Ayuda a otros a reencontrar sus pertenencias.</p>
-          <a href="../Registros/register.php" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center px-4 py-3" style="font-size: 1rem; font-weight: bold; border-radius: 8px;">
+          <a href="../Registros/ObjPerdido.php" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center px-4 py-3" style="font-size: 1rem; font-weight: bold; border-radius: 8px;">
             <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
             Reportar
           </a>
@@ -190,7 +171,7 @@ if (isset($_SESSION['nombre'])) {
           </div>
           <h3 class="card-title mb-3">Publicar Objeto Encontrado</h3>
           <p class="card-text text-muted mb-4">Ayuda a otros a reencontrar sus pertenencias.</p>
-          <a href="../Registros/register.php" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center px-4 py-3" style="font-size: 1rem; font-weight: bold; border-radius: 8px;">
+          <a href="../Registros/ObjPerdido.php" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center px-4 py-3" style="font-size: 1rem; font-weight: bold; border-radius: 8px;">
             <i class="bi bi-box-seam me-2 fs-5"></i>
             Publicar
           </a>
@@ -200,83 +181,6 @@ if (isset($_SESSION['nombre'])) {
   </div>
 </div>
 
-  <div class="container marketing py-5">
-    <div class="row featurette align-items-center">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-bold mb-4">¿Cómo Funciona?</h2>
-        <p class="lead mb-4">Nuestra plataforma hace fácil y rápido el proceso de reencuentro con tus objetos perdidos en solo tres pasos:</p>
-        
-        <ul class="list-unstyled">
-          <li class="mb-3">
-            <h4 class="fw-bold mb-1">1. Regístrate</h4>
-            <p>Abre tu cuenta para acceder a todas nuestras herramientas de búsqueda y publicación.</p>
-          </li>
-          <li class="mb-3">
-            <h4 class="fw-bold mb-1">2. Publica o Busca</h4>
-            <p>Utiliza nuestra plataforma para registrar o buscar objetos extraviados fácilmente.</p>
-          </li>
-          <li class="mb-3">
-            <h4 class="fw-bold mb-1">3. Recupera tu objeto</h4>
-            <p>¡Conéctate con quien encontró tu objeto y recupéralo sin complicaciones!</p>
-          </li>
-        </ul>
-
-        <p class="mt-4"><a class="btn btn-lg btn-primary" href="#">Comienza ahora</a></p>
-      </div>
-
-      <div class="col-md-5">
-        <img src="../assets/img/img10.jpg" alt="Proceso de recuperación de objetos" 
-            class="featurette-image img-fluid mx-auto rounded-3 shadow-sm" 
-            style="width: 100%; max-width: 450px; height: auto; object-fit: cover;">
-      </div>
-    </div>
-  </div>
-
-  <br>
-
-
-    <div class="container my-5">
-      <h2 class="text-center mb-4 fw-bold" style="color: #333;">Calificaciones De Nuestros Usuarios</h2>
-      <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-4">
-                <img src="../assets/img/a.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 1">
-              </div>
-              <div class="col-4">
-                <img src="../assets/img/b.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 2">
-              </div>
-              <div class="col-4">
-                <img src="../assets/img/c.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 3">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-4">
-                <img src="../assets/img/d.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 4">
-              </div>
-              <div class="col-4">
-                <img src="../assets/img/e.png" class="d-block w-100 rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 5">
-              </div>
-              <div class="col-4">
-                <img src="../assets/img/f.png" class="d-block w-100
-                rounded-3 shadow-sm" style="height: 350px; object-fit: cover;" alt="Foto 6">
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
   </main>
 
   <footer class="text-center text-white py-4" style="background-color: #333;">

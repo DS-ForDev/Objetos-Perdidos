@@ -51,7 +51,7 @@ if (isset($_SESSION['nombre'])) {
           </form>
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link " href="#" id="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <p><?php echo htmlspecialchars($Nombre_de_Usuario); ?></p> <!-- Mostrar el nombre del usuario -->
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
