@@ -218,7 +218,6 @@ cursor:
 
 /* Botones principales */
 .button-section {
-<<<<<<< HEAD
     display: flex; /* Usamos flexbox para gestionar alineación */
     justify-content: space-between; /* Separa los botones uniformemente en la misma línea */
     align-items: center; /* Asegura que estén alineados verticalmente */
@@ -238,33 +237,6 @@ cursor:
 
 .primary-button:hover {
     background-color: #0056b3; /* Color más oscuro al pasar el mouse */
-=======
-display:
-	flex;
-justify-content:
-	space-around;
-	margin-top: 20px;
-}
-
-.primary-button {
-	padding: 15px 25px;
-background-color:
-#2B547E;
-color:
-	white;
-	border-radius: 25px;
-border:
-	none;
-	font-size: 18px;
-cursor:
-	pointer;
-}
-
-.primary-button:
-hover {
-background-color:
-#1e4170;
->>>>>>> 0cb94dd264c3aa19b6ccd3e646eba1eb6892e77f
 }
 
 /* Publicaciones */
@@ -343,11 +315,8 @@ cursor:
 	pointer;
 }
 
-<<<<<<< HEAD
+
 .claim-button
-=======
-.claim-button:
->>>>>>> 0cb94dd264c3aa19b6ccd3e646eba1eb6892e77f
 hover {
 background-color:
 #23527c;
@@ -401,11 +370,8 @@ font-weight:
 	border-radius: 25px;
 }
 
-<<<<<<< HEAD
+
 .primary-button
-=======
-.primary-button:
->>>>>>> 0cb94dd264c3aa19b6ccd3e646eba1eb6892e77f
 hover {
 background-color:
 #1e4170; /* Color mC!s oscuro al pasar el mouse */
@@ -420,11 +386,8 @@ background-color:
 	border-radius: 25px;
 }
 
-<<<<<<< HEAD
+
 .filter-button
-=======
-.filter-button:
->>>>>>> 0cb94dd264c3aa19b6ccd3e646eba1eb6892e77f
 hover {
 background-color:
 #1e4170;
@@ -445,20 +408,11 @@ transition:
 	background-color 0.3s ease;
 }
 
-<<<<<<< HEAD
+
 .claim-button:hover, 
 .review-button:hover {
     background-color: #23527c; /* Azul más oscuro al pasar el mouse */
 }
-
-=======
-.claim-button{
-hover, .review-button:
-hover {
-background-color:
-#23527c; /* Azul mC!s oscuro al pasar el mouse */
-}}
->>>>>>> 0cb94dd264c3aa19b6ccd3e646eba1eb6892e77f
 
 .review-button {
 background-color:
@@ -656,11 +610,9 @@ text-decoration:
 </div>
 
 <!-- Publicaciones -->
-<<<<<<< HEAD
-<br>
-=======
 
->>>>>>> 0cb94dd264c3aa19b6ccd3e646eba1eb6892e77f
+<br>
+
 <!-- Publicacion 1 -->
 <div class="post">
 <div class="user-info">
