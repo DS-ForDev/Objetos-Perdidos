@@ -105,9 +105,10 @@ if (isset($_SESSION['nombre'])) {
           <img src="../assets/img/img13.jpg" alt="Imagen 1" class="d-block w-100" style="height: 500px; object-fit: cover;">
           <div class="container">
             <div class="carousel-caption text-start" style="bottom: 150px;">
-              <h1 class="display-4 fw-bold">¡BIENVENIDO!</h1>
-              <p class="lead">¿Buscas algo perdido o encontraste algo ajeno? Estás en el lugar correcto.</p>
-              <p><a class="btn btn-lg btn-primary" href="../Registros/register.php">Regístrese Hoy</a></p>
+            <h1 class="display-4 fw-bold" style="display: inline; font-family: inherit;">
+                  ¡BIENVENIDO <span style="font-family: inherit;"><?php echo htmlspecialchars($Nombre_de_Usuario); ?>!</span>
+            </h1>
+              <p class="lead">¿Buscas algo perdido o encontraste algo ajeno? Estás en el lugar correcto.</p>       
             </div>
           </div>
         </div>
