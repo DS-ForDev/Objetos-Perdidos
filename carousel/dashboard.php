@@ -61,6 +61,7 @@ if (isset($_SESSION['nombre'])) {
                 <li><a class="dropdown-item" href="/Carousel/dashboard.php">Dashboard</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="../Carousel/index.php">Cerrar sesión</a></li>
+
               </ul>
             </li>
           </ul>
