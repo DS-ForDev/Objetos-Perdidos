@@ -8,6 +8,7 @@
   <title>Objetos Perdidos</title>
   <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -77,9 +78,10 @@
                 Perfil
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
-                <li><a class="dropdown-item" href="/Registros/perfil.php">Ver perfil</a></li>
+                <li><a class="dropdown-item bi bi-file-person" href="/Registros/perfil.php">  </a>Ver perfil</li>
                 <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
                 <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
+                <li><a class="dropdown-item" href="/Carousel/dashboard.php">Dashboard</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>
               </ul>
