@@ -3,7 +3,7 @@
 session_start();
 
 // Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['usuario_id'])) {
+if (!isset($_SESSION['ID_usuario'])) {
     die("Acceso denegado: debes iniciar sesión para registrar un objeto perdido.");
 }
 
@@ -11,7 +11,7 @@ if (!isset($_SESSION['usuario_id'])) {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "objetos_perdidos";
+$dbname = "objetosperdidos";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
