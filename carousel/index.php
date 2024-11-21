@@ -38,7 +38,7 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
           <img src="../assets/img/logoOP.png" alt="" style="width: 30px; height: 30px; margin-right: 10px;">
@@ -50,22 +50,23 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="../carousel/index.php">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Nosotros.php">Nosotros</a>
+              <a class="nav-link" href="../carousel/Nosotros.php">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dashboard.php">Dashboard</a>
+              <a class="nav-link" href="../carousel/Contacto.php">Contacto</a>
+            </li>
+            
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+               <li class="nav-item">
+              <a class="nav-link " href="../Registros/login.php">Iniciar sesión</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Contacto.php">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="publicaciones.php">publicaciones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../Registros/login.php">Iniciar sesión</a>
+              <a class="nav-link" href="../Registros/register.php">Registrate</a>
             </li>
           </ul>
           <form class="d-flex me-3" role="search">

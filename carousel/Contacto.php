@@ -99,7 +99,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
           <img src="../assets/img/logoOP.png" alt="" style="width: 30px; height: 30px; margin-right: 10px;">
@@ -111,34 +111,24 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="../carousel/index.php">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Nosotros.php">Nosotros</a>
+              <a class="nav-link" href="../carousel/Nosotros.php">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="Contacto.php">Contacto</a>
+              <a class="nav-link" href="../carousel/Contacto.php">Contacto</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../Registros/login.php">Iniciar sesión</a>
-            </li>
+            
           </ul>
-          <form class="d-flex me-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-            <button class="btn btn-outline-light" type="submit">Buscar</button>
-          </form>
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Perfil
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
-                <li><a class="dropdown-item" href="/Registros/perfil.php">Ver perfil</a></li>
-                <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
-                <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>
-              </ul>
+               <li class="nav-item">
+              <a class="nav-link " href="../Registros/login.php">Iniciar sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Registros/register.php">Registrate</a>
+            </li>
             </li>
           </ul>
         </div>

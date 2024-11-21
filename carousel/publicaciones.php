@@ -1,3 +1,13 @@
+<?php
+session_start(); // Asegúrate de iniciar la sesión
+
+// Verifica si el usuario está logueado
+if (isset($_SESSION['nombre'])) {
+    $Nombre_de_Usuario = $_SESSION['nombre'];
+} else {
+    $Nombre_de_Usuario = null; // Si no hay sesión, el usuario es visitante
+}
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
@@ -208,31 +218,25 @@ cursor:
 
 /* Botones principales */
 .button-section {
-display:
-	flex;
-justify-content:
-	space-around;
-	margin-top: 20px;
+    display: flex; /* Usamos flexbox para gestionar alineación */
+    justify-content: space-between; /* Separa los botones uniformemente en la misma línea */
+    align-items: center; /* Asegura que estén alineados verticalmente */
+    gap: 1rem; /* Espaciado opcional entre botones */
 }
 
 .primary-button {
-	padding: 15px 25px;
-background-color:
-#2B547E;
-color:
-	white;
-	border-radius: 25px;
-border:
-	none;
-	font-size: 18px;
-cursor:
-	pointer;
+    padding: 0.5rem 1rem; /* Tamaño del botón */
+    font-size: 1rem; /* Tamaño del texto */
+    border: none; /* Quita bordes por defecto */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #007bff; /* Color azul */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Animación suave al pasar el mouse */
 }
 
-.primary-button:
-hover {
-background-color:
-#1e4170;
+.primary-button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
 }
 
 /* Publicaciones */
@@ -311,7 +315,8 @@ cursor:
 	pointer;
 }
 
-.claim-button:
+
+.claim-button
 hover {
 background-color:
 #23527c;
@@ -365,7 +370,8 @@ font-weight:
 	border-radius: 25px;
 }
 
-.primary-button:
+
+.primary-button
 hover {
 background-color:
 #1e4170; /* Color mC!s oscuro al pasar el mouse */
@@ -380,7 +386,8 @@ background-color:
 	border-radius: 25px;
 }
 
-.filter-button:
+
+.filter-button
 hover {
 background-color:
 #1e4170;
@@ -401,12 +408,11 @@ transition:
 	background-color 0.3s ease;
 }
 
-.claim-button{
-hover, .review-button:
-hover {
-background-color:
-#23527c; /* Azul mC!s oscuro al pasar el mouse */
-}}
+
+.claim-button:hover, 
+.review-button:hover {
+    background-color: #23527c; /* Azul más oscuro al pasar el mouse */
+}
 
 .review-button {
 background-color:
@@ -544,23 +550,15 @@ text-decoration:
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Nosotros.php">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dashboard.php">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Contacto.php">Contacto</a>
+              <a class="nav-link active" aria-current="page" href="Bienvenida.php">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="publicaciones.php">publicaciones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../Registros/login.php">Iniciar sesión</a>
+              <a class="nav-link" href="dashboard.php">Dashboard</a>
             </li>
+            
           </ul>
           <form class="d-flex me-3" role="search">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
@@ -568,16 +566,19 @@ text-decoration:
           </form>
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Perfil
+              <a class="nav-link " href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              <p><?php echo htmlspecialchars($Nombre_de_Usuario); ?></p> <!-- Mostrar el nombre del usuario -->
               </a>
+              
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
                 <li><a class="dropdown-item" href="/Registros/perfil.php"> Ver Perfil</a></li>
                 <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
-                <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
-                <li><a class="dropdown-item" href="/Carousel/dashboard.php">Dashboard</a></li>
+                <li><a class="dropdown-item" href="../Registros/ObjPerdido.php">Publicar</a></li>
+                <li><a class="dropdown-item" href="../Carousel/dashboard.php">Dashboard</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>
+
+                <li><a class="dropdown-item" href="../Carousel/index.php">Cerrar sesión</a></li>
+
               </ul>
             </li>
           </ul>
@@ -596,6 +597,8 @@ text-decoration:
     <div class="lost-found-container">
 <!-- SecciC3n de busqueda -->
 
+<br><br>
+
 <!-- Botones principales -->
 <div class="button-section">
 <button class="primary-button">¿Perdiste un objeto? Publícalo aquí</button>
@@ -603,6 +606,8 @@ text-decoration:
 </div>
 
 <!-- Publicaciones -->
+
+<br>
 
 <!-- Publicacion 1 -->
 <div class="post">

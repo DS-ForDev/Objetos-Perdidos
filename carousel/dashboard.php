@@ -1,3 +1,13 @@
+<?php
+session_start(); // Asegúrate de iniciar la sesión
+
+// Verifica si el usuario está logueado
+if (isset($_SESSION['nombre'])) {
+    $Nombre_de_Usuario = $_SESSION['nombre'];
+} else {
+    $Nombre_de_Usuario = null; // Si no hay sesión, el usuario es visitante
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,51 +23,51 @@
 </head>
 <body>
     <header class="navbar">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-            <div class="container-fluid">
-              <a class="navbar-brand d-flex align-items-center" href="index.php">
-                <img src="../assets/img/logoOP.png" alt="" style="width: 30px; height: 30px; margin-right: 10px;">
-                <span class="font-weight-bold">Objetos Perdidos</span>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="index.php">
+          <img src="../assets/img/logoOP.png" alt="" style="width: 30px; height: 30px; margin-right: 10px;">
+          <span class="font-weight-bold">Objetos Perdidos</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Bienvenida.php">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="publicaciones.php">publicaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.php">Dashboard</a>
+            </li>
+            
+          </ul>
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" id="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <p><?php echo htmlspecialchars($Nombre_de_Usuario); ?></p> <!-- Mostrar el nombre del usuario -->
               </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Nosotros.php">Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Contacto.php">Contacto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../Registros/login.php">Iniciar sesión</a>
-                  </li>
-                </ul>
-                <form class="d-flex me-3" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                  <button class="btn btn-outline-light" type="submit">Buscar</button>
-                </form>
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Perfil
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
-                      <li><a class="dropdown-item" href="/Registros/perfil.php">Ver perfil</a></li>
-                      <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
-                      <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
+                <li><a class="dropdown-item" href="/Registros/perfil.php"> Ver Perfil</a></li>
+                <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
+                <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
+                <li><a class="dropdown-item" href="/Carousel/dashboard.php">Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../Carousel/index.php">Cerrar sesión</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     </header>
 
     <!-- Barra lateral -->
