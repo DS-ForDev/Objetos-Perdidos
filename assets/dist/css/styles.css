@@ -5,9 +5,6 @@
     --terciary-color: #45a0e6;
  }
 
-body{
-    align-items: center;
-}
 
 .fondo {
     top: 101px;
@@ -21,6 +18,7 @@ body{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     margin-bottom: 200px;
 }
+
 
 .card {
     background-color: var(--secondary-color);
@@ -73,8 +71,31 @@ body{
     color: black;
 }
 
-.card2 p{
-    color: white;
+
+.card:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.card2:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px; 
+    transition: transform 0.3s ease, background-color 0.3s ease;  
+    color: black;
+}
+
+.card3:hover{
+    background-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;  
+}
+
+.card2 p:hover{
+    color: black;
 }
 
 
