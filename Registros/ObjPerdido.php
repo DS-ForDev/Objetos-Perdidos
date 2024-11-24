@@ -242,10 +242,6 @@ if (isset($_SESSION['nombre'])) {
                         <input type="text" class="form-control" id="tamano" name="tamano" required>
                     </div>
                     <div class="mb-3">
-                        <label for="contenido" class="form-label">Contenido</label>
-                        <textarea class="form-control" id="contenido" name="contenido" rows="3" required></textarea>
-                    </div>
-                    <div class="mb-3">
                         <label for="descripcion" class="form-label">Descripción Breve</label>
                         <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
                     </div>

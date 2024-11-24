@@ -68,6 +68,24 @@
             <li class="nav-item">
               <a class="nav-link" href="../Registros/register.php">Registrate</a>
             </li>
+          </ul>
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-light" type="submit">Buscar</button>
+          </form>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Perfil
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
+                <li><a class="dropdown-item" href="/Registros/perfil.php"> Ver perfil </a></li>
+                <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
+                <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
+                <li><a class="dropdown-item" href="/Carousel/dashboard.php">Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>
+              </ul>
             </li>
           </ul>
         </div>

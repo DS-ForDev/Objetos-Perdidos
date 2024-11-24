@@ -11,7 +11,8 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
     <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
@@ -233,7 +234,7 @@
     <input type="password" id="password" name="contraseña" placeholder="Ingresa tu contraseña..." required>
 
     <div class="forgot-password">
-        <a href="#">¿Olvidaste tu contraseña? Recuperar contraseña</a>
+        <a href="ForwardPasss.php">¿Olvidaste tu contraseña? Recuperar contraseña</a>
     </div>
 
     <button type="submit" class="submit-btn">Iniciar Sesión</button>
@@ -241,9 +242,9 @@
                     O ingresa con
                 </div>
                 <div class="social-login">
-                    <img src="facebook.png" alt="Facebook"> <!-- Reemplaza "facebook.png" con la URL de tu ícono de Facebook -->
-                    <img src="google.png" alt="Google"> <!-- Reemplaza "google.png" con la URL de tu ícono de Google -->
-                </div>
+                <a href="/register-facebook" class="btn btn-outline-primary d-flex align-items-center gap-2"><i class="bi bi-facebook"></i>Facebook</a>
+                <a href="/register-google" class="btn btn-outline-danger d-flex align-items-center gap-2"><i class="bi bi-google"></i>Google</a>
+              </div>
             </form>
         </div>
        
