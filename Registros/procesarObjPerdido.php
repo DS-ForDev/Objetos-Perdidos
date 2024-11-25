@@ -1,11 +1,16 @@
 <?php
-// Iniciar sesión
-session_start();
+session_start(); // Asegúrate de iniciar la sesión
 
-// Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['ID_usuario'])) {
-    die("Acceso denegado: debes iniciar sesión para registrar un objeto perdido.");
+// Verifica si el usuario está logueado
+if (isset($_SESSION['nombre'])) {
+    $usuario_id = $_SESSION['nombre'];
+} else {
+    // Si no está logueado, redirige o maneja el error
+    echo "No estás logueado.";
+    exit();
 }
+
+
 
 // Conexión a la base de datos
 $servername = "localhost";
@@ -32,14 +37,14 @@ $foto2 = !empty($_FILES['foto2']['tmp_name']) ? $_FILES['foto2']['tmp_name'] : n
 $foto3 = !empty($_FILES['foto3']['tmp_name']) ? $_FILES['foto3']['tmp_name'] : null;
 
 // Usuario que realiza la acción (obtenido de la sesión)
-$usuario_id = $_SESSION['usuario_id'];
+$usuario_id = $_SESSION['nombre'];
 
 // Preparar consulta SQL
-$sql = "INSERT INTO objetos_perdidos (usuario_id, categoria, nombre, color, tamaño, descripcion, foto1, foto2, foto3) 
+$sql = "INSERT INTO objetos_perdidos (id, categoria, nombre, color, tamaño, descripcion, foto1, foto2, foto3) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("issssssss", $usuario_id, $categoria, $nombre, $color, $tamaño, $descripcion, $foto1, $foto2, $foto3);
+$stmt->bind_param("issssssss", $id, $categoria, $nombre, $color, $tamaño, $descripcion, $foto1, $foto2, $foto3);
 
 if ($stmt->execute()) {
     echo "Registro exitoso";
