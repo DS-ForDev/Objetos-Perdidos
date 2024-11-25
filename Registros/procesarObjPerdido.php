@@ -10,8 +10,6 @@ if (isset($_SESSION['nombre'])) {
     exit();
 }
 
-
-
 // Conexión a la base de datos
 $servername = "localhost";
 $username = "root";
@@ -32,19 +30,19 @@ $tamaño = isset($_POST['tamaño']) ? $_POST['tamaño'] : null;
 $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : null;
 
 // Validar archivos
-$foto1 = !empty($_FILES['foto1']['tmp_name']) ? $_FILES['foto1']['tmp_name'] : null;
-$foto2 = !empty($_FILES['foto2']['tmp_name']) ? $_FILES['foto2']['tmp_name'] : null;
-$foto3 = !empty($_FILES['foto3']['tmp_name']) ? $_FILES['foto3']['tmp_name'] : null;
+$foto1 = !empty($_FILES['foto1']['tmp_name']) ? file_get_contents($_FILES['foto1']['tmp_name']) : null;
+$foto2 = !empty($_FILES['foto2']['tmp_name']) ? file_get_contents($_FILES['foto2']['tmp_name']) : null;
+$foto3 = !empty($_FILES['foto3']['tmp_name']) ? file_get_contents($_FILES['foto3']['tmp_name']) : null;
 
 // Usuario que realiza la acción (obtenido de la sesión)
 $usuario_id = $_SESSION['nombre'];
 
 // Preparar consulta SQL
-$sql = "INSERT INTO objetos_perdidos (id, categoria, nombre, color, tamaño, descripcion, foto1, foto2, foto3) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO objetos_perdidos (categoria, nombre, color, tamaño, descripcion, foto1, foto2, foto3) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("issssssss", $id, $categoria, $nombre, $color, $tamaño, $descripcion, $foto1, $foto2, $foto3);
+$stmt->bind_param("ssssssss", $categoria, $nombre, $color, $tamaño, $descripcion, $foto1, $foto2, $foto3);
 
 if ($stmt->execute()) {
     echo "Registro exitoso";

@@ -21,7 +21,9 @@ if (isset($_SESSION['nombre'])) {
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
     <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
@@ -256,9 +258,62 @@ if (isset($_SESSION['nombre'])) {
 
         <!-- Contenedor en blanco para futuras ideas -->
         <div class="col-md-4">
-            <div class="card shadow-sm p-4 h-100 d-flex align-items-center justify-content-center">
-                <p class="text-muted">Espacio reservado para nuevas ideas o secciones adicionales.</p>
-            </div>
+        <?php
+
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "objetosperdidos";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Consulta para obtener los objetos publicados
+$sql = "SELECT id, categoria, nombre, color, tamaño, descripcion, foto1, foto2, foto3 FROM objetos_perdidos";
+$result = $conn->query($sql);
+
+// Mostrar los resultados en una tabla o tarjetas
+if ($result->num_rows > 0) {
+    echo '<div class="container">';
+    echo '<div class="row">';
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-md-4 mb-4">';
+        echo '<div class="card">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">' . htmlspecialchars($row['nombre']) . '</h5>';
+        echo '<p class="card-text"><strong>Categoría:</strong> ' . htmlspecialchars($row['categoria']) . '</p>';
+        echo '<p class="card-text"><strong>Color:</strong> ' . htmlspecialchars($row['color']) . '</p>';
+        echo '<p class="card-text"><strong>Tamaño:</strong> ' . htmlspecialchars($row['tamaño']) . '</p>';
+        echo '<p class="card-text"><strong>Descripción:</strong> ' . htmlspecialchars($row['descripcion']) . '</p>';
+        
+        // Mostrar imágenes si existen
+        if (!empty($row['foto1'])) {
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['foto1']) . '" class="img-fluid mb-2" alt="Foto 1">';
+        }
+        if (!empty($row['foto2'])) {
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['foto2']) . '" class="img-fluid mb-2" alt="Foto 2">';
+        }
+        if (!empty($row['foto3'])) {
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['foto3']) . '" class="img-fluid mb-2" alt="Foto 3">';
+        }
+        
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
+    echo '</div>';
+    echo '</div>';
+} else {
+    echo '<p>No hay objetos registrados.</p>';
+}
+
+$conn->close();
+?>
+
         </div>
     </div>
 </div>
