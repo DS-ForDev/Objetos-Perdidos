@@ -118,6 +118,19 @@ body {
 .card.teal { background-color: #20c997; }
 .card.yellow { background-color: #ffc107; }
 
+a.green{
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    
+    padding: 4px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 200px;
+    position: relative;
+    left: 40px;
+}
 
 
 .charts .chart, .charts .info-boxes {
