@@ -123,9 +123,10 @@ if (isset($_SESSION['nombre'])) {
                 <button>Ver más</button>
             </div>
             <div class="card green">
-                <p>Gestion de Usuarios</p>
-                <button>Ver más</button>
+                <p>Gestión de Usuarios</p>
+                <a href="../Registros/Gestion_Usuarios.php" class="green">Ver más</a>
             </div>
+
             <div class="card orange">
                 <p>Publicaciones</p>
                 <button>Ver más</button>
