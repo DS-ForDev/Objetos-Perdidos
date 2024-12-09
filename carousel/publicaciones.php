@@ -296,9 +296,11 @@ color:
 }
 
 .found-item-image {
+  position: relative;
 	width: 100%;
 	border-radius: 10px;
 	margin: 20px 0;
+  left: 60px;
 }
 
 /* BotC3n de reclamo */

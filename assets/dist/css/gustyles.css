@@ -5,6 +5,8 @@ body {
     margin: 0;
     padding: 20px;
     color: #333;
+    position: relative;
+    top: 60px;
 }
 
 h1, h2 {
@@ -14,7 +16,7 @@ h1, h2 {
 
 h1{
     position: relative;
-    top:30px;
+    top:20px;
 }
 
 h2{
@@ -33,6 +35,7 @@ h2{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     top: 20px;
+    padding-left: 55px;
 }
 
 form label {
@@ -185,7 +188,7 @@ table td button {
 }
 
 table td button:hover {
-    background-color: #0056b3;
+    background-color: #2ca7bd;
 }
 
 /* Mejorar el tamaño de la tabla en pantallas pequeñas */
