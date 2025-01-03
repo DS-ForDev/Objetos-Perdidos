@@ -73,7 +73,11 @@ try {
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
     <title>Objetos Perdidos</title>
-
+    <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
     <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
     
@@ -311,12 +315,17 @@ try {
 
 
   <!-- FOOTER -->
-  <div class="footer">
-            <a href="#">Twitter</a>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-        </div>
+  <footer class="text-center text-white py-4" style="background-color: #333;">
+    <div class="container">
+      <p class="mb-0">&copy; 2024 Desarrollado Por Dolphin Telecommunication. Todos los derechos reservados.</p>
+      <p class="mb-0">Síguenos en:</p>
+      <div>
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
 </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
