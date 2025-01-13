@@ -40,7 +40,7 @@ body {
     color: white;
     height: 100vh; /* Ocupa toda la altura del viewport */
     position: fixed; /* Se mantiene fija en la parte izquierda */
-    top: 48px;
+    top: 72px;
     left: 0
 }
 
@@ -117,6 +117,34 @@ body {
 .card.orange { background-color: #fd7e14; }
 .card.teal { background-color: #20c997; }
 .card.yellow { background-color: #ffc107; }
+
+a.green{
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    padding: 4px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 200px;
+    position: relative;
+    left: 40px;
+}
+
+a.orange{
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    padding: 4px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 200px;
+    position: relative;
+    left: 40px;
+
+}
+
 
 .charts .chart, .charts .info-boxes {
     margin-bottom: 20px;

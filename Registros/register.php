@@ -73,7 +73,11 @@ try {
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
     <title>Objetos Perdidos</title>
-
+    <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
     <link rel="icon" href="../assets/img/logoOP.png" type="image/x-icon">
     
@@ -212,6 +216,49 @@ try {
             color: var(--primary-color);
             text-decoration: none;
         }
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+.modal-content {
+  text-align: justify;
+  font-size: 18px; /* Tamaño de letra aumentado */
+  line-height: 1.6; /* Espaciado entre líneas */
+  padding: 20px; /* Espaciado interno */
+  max-height: 80vh; /* Limitar altura del modal */
+  overflow-y: auto; /* Habilitar scroll si el contenido es demasiado largo */
+  margin: 100px auto; /* Centrar el cuadro modal verticalmente */
+  width: 90%; /* Ajustar el ancho */
+  max-width: 1000px; /* Ancho máximo para evitar que sea demasiado ancho */
+}
+.modal-body {
+  padding: 10px 20px;
+}
+
+.modal-footer {
+  text-align: center;
+  padding-top: 15px;
+}
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: black;
+  }
+
+  
 </style>
 
 
@@ -293,11 +340,101 @@ try {
 
                 <div class="terms">
         <input type="checkbox" id="terms" name="terms">
-        <label for="terms">Acepto los Términos y Condiciones</label>
-    </div>
+        <label for="terms">Acepto los  <button id="openTerms">Términos y Condiciones</label></button>
 
-                <button type="submit" class="submit-btn">Registrarse</button>
+
+    </div>
+<!-- Modal de Términos -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+  <h2>Términos y Condiciones de Uso de "Objetos-Perdidos"</h2>
+
+<h3>1. Aceptación de los Términos</h3>
+<p>Al acceder y utilizar la plataforma <strong>"Objetos-Perdidos"</strong> (en adelante, "la plataforma"), el usuario acepta y está de acuerdo en cumplir con los presentes Términos y Condiciones. Si no está de acuerdo con ellos, debe abstenerse de usar la plataforma.</p>
+
+<h3>2. Descripción del Servicio</h3>
+<p><strong>"Objetos-Perdidos"</strong> es una plataforma diseñada para facilitar la publicación y búsqueda de anuncios relacionados con objetos perdidos y encontrados. El servicio tiene como objetivo conectar a los usuarios para que puedan recuperar o devolver pertenencias de manera segura y efectiva.</p>
+
+<h3>3. Registro y Uso de la Plataforma</h3>
+<ul>
+  <li><strong>Registro:</strong> Algunos servicios de la plataforma están disponibles solo para usuarios registrados. El registro requiere información válida y actualizada.</li>
+  <li><strong>Responsabilidad del Usuario:</strong> Los usuarios son responsables de la veracidad de la información publicada y deben abstenerse de publicar contenido falso, engañoso o fraudulento.</li>
+  <li><strong>Restricciones:</strong> Está prohibido el uso de la plataforma para actividades ilegales, ofensivas o que incumplan estos términos.</li>
+</ul>
+
+<h3>4. Publicación de Anuncios</h3>
+<ul>
+  <li><strong>Contenido:</strong> Los anuncios deben describir con precisión los objetos perdidos o encontrados y proporcionar detalles útiles.</li>
+  <li><strong>Prohibiciones:</strong> No se permite publicar contenido que sea ofensivo, difamatorio, discriminatorio o que infrinja derechos de terceros.</li>
+  <li><strong>Responsabilidad:</strong> La plataforma no garantiza la exactitud de los anuncios ni se hace responsable de la veracidad del contenido publicado por los usuarios.</li>
+</ul>
+
+<h3>5. Privacidad y Datos Personales</h3>
+<ul>
+  <li><strong>Recolección de Datos:</strong> La plataforma recopila información personal según lo establecido en nuestra <a href="#">Política de Privacidad</a>.</li>
+  <li><strong>Uso de Datos:</strong> La información proporcionada será utilizada únicamente para los fines descritos en la plataforma.</li>
+  <li><strong>Confidencialidad:</strong> La plataforma no compartirá información personal sin el consentimiento del usuario, salvo en los casos requeridos por la ley.</li>
+</ul>
+
+<h3>6. Limitación de Responsabilidad</h3>
+<ul>
+  <li><strong>Intermediación:</strong> La plataforma actúa como intermediario entre los usuarios y no garantiza la devolución de los objetos.</li>
+  <li><strong>Exclusión de Garantías:</strong> No nos hacemos responsables de daños, pérdidas o conflictos derivados del uso de la plataforma.</li>
+</ul>
+
+<h3>7. Conducta de los Usuarios</h3>
+<ul>
+  <li><strong>Buen Uso:</strong> Los usuarios deben utilizar la plataforma de manera respetuosa y acorde con las leyes aplicables.</li>
+  <li><strong>Sanciones:</strong> El incumplimiento de estos términos puede resultar en la suspensión o eliminación de la cuenta del usuario.</li>
+</ul>
+
+<h3>8. Modificaciones de los Términos</h3>
+<p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las actualizaciones serán notificadas a los usuarios y el uso continuado de la plataforma implicará su aceptación.</p>
+
+<h3>9. Legislación Aplicable</h3>
+<p>Estos términos se rigen por las leyes de Colombia. Cualquier disputa será resuelta en los tribunales competentes de Bogotá.</p>
+
+<h3>10. Contacto</h3>
+<p>Para consultas o soporte, puede comunicarse con nosotros a través del correo: <a href="mailto:soporte@objetos-perdidos.com">soporte@objetos-perdidos.com</a>.</p>
+
+<!-- Políticas de Privacidad -->
+
+      <br><br>
+        <h2>Políticas de Privacidad</h2>
+        <p>En <strong>Objetos-Perdidos</strong>, valoramos su privacidad. Estas políticas describen cómo recopilamos, usamos y protegemos su información personal.</p>
+        
+        <h4>1. Información que Recopilamos</h4>
+        <p>Podemos recopilar información personal, como nombre, correo electrónico, y detalles de los objetos que publique en nuestra plataforma.</p>
+        
+        <h4>2. Uso de la Información</h4>
+        <ul>
+          <li>Para ofrecerle nuestros servicios de publicación de anuncios.</li>
+          <li>Para mejorar nuestra plataforma y ofrecerle una mejor experiencia.</li>
+          <li>Para cumplir con requisitos legales.</li>
+        </ul>
+        
+        <h4>3. Protección de la Información</h4>
+        <p>Implementamos medidas de seguridad adecuadas para proteger sus datos personales contra accesos no autorizados.</p>
+        
+        <h4>4. Compartir Información</h4>
+        <p>No compartiremos su información con terceros sin su consentimiento, salvo cuando sea necesario por ley.</p>
+        
+        <h4>5. Sus Derechos</h4>
+        <p>Usted tiene derecho a acceder, modificar o eliminar su información personal almacenada en nuestra plataforma. Para ejercer estos derechos, contáctenos en: <a href="mailto:soporte@objetos-perdidos.com">soporte@objetos-perdidos.com</a>.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+      </div>
+    </div>  <button type="submit" class="submit-btn">Registrarse</button>
             </form>
+  </div>
+</div>
+
+  </div>
+</div>
+              
         </div>
     </div>
   </div>
@@ -311,14 +448,52 @@ try {
 
 
   <!-- FOOTER -->
-  <div class="footer">
-            <a href="#">Twitter</a>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-        </div>
+  <footer class="text-center text-white py-4" ">
+    <div class="container">
+      <p class="mb-0">&copy; 2024 Desarrollado Por Dolphin Telecommunication. Todos los derechos reservados.</p>
+      <p class="mb-0">Síguenos en:</p>
+      <div>
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
 </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<!-- JavaScript para el Modal -->
+<script>
+  const modal = document.getElementById("termsModal");
+  const btn = document.getElementById("openTerms");
+  const span = document.querySelector(".close");
 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  };
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const termsModal = document.getElementById("termsModal");
+    const privacyModal = document.getElementById("privacyPolicyModal");
+
+    if (termsModal && privacyModal) {
+      // Al cerrar el modal de términos y condiciones, abrir el de políticas de privacidad
+      termsModal.addEventListener("hidden.bs.modal", function () {
+        new bootstrap.Modal(privacyModal).show();
+      });
+    }
+  });
+</script>
     </body>
 </html>
