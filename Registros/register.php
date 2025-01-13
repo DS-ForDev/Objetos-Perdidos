@@ -448,7 +448,8 @@ try {
 
 
   <!-- FOOTER -->
-  <footer class="text-center text-white py-4" ">
+  <footer class="text-center text-white py-4">
+  <footer class="text-center text-white py-4" style="background-color: #333;">
     <div class="container">
       <p class="mb-0">&copy; 2024 Desarrollado Por Dolphin Telecommunication. Todos los derechos reservados.</p>
       <p class="mb-0">Síguenos en:</p>
