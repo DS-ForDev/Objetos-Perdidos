@@ -7,6 +7,42 @@ if (isset($_SESSION['nombre'])) {
 } else {
     $Nombre_de_Usuario = null; // Si no hay sesión, el usuario es visitante
 }
+$usuario = "root"; // Usuario por defecto en XAMPP
+$contraseña = "";  // Contraseña por defecto vacía en XAMPP
+
+// 1. Conexión a la base de datos
+$host = "localhost";
+$dbname = "objetosperdidos";
+$username = "root";
+$password = "";
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname",$usuario, $contraseña);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Error al conectar con la base de datos: " . $e->getMessage();
+    die();
+}
+
+// 2. Consulta a la base de datos para obtener los objetos perdidos
+$sql = "
+    SELECT 
+        o.id AS id_objeto, 
+        o.nombre, 
+        o.categoria, 
+        o.color, 
+        o.tamaño, 
+        o.descripcion, 
+        o.foto1, 
+        o.foto2, 
+        o.foto3, 
+        o.fecha_registro
+    FROM 
+        objetos_perdidos o";
+
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$publicaciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -540,6 +576,53 @@ text-decoration:
 
     
     <header>
+    <div class="container marketing">
+    <div class="lost-found-container">
+        <?php foreach ($publicaciones as $publicacion): ?>
+            <div class="post">
+                <div class="user-info">
+                    <!-- Por ahora, podemos omitir la imagen de perfil y el nombre del usuario -->
+                    <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
+                    <p><strong>Maria Tereza De Calcuta</strong></p>
+                    
+                    <span class="status">Estado: <?= htmlspecialchars($publicacion['estado']) ?></span>
+                </div><p>Hace un día</p>
+                <div class="description">
+                    <p><strong>Descripción:</strong> <?= htmlspecialchars($publicacion['descripcion']) ?></p>
+                    <ul>
+                        <!-- Aquí puedes añadir objetos si están separados por comas en la base de datos -->
+                        <?php
+                        $objetos = explode(",", $publicacion['descripcion']);
+                        foreach ($objetos as $objeto): ?>
+                            <li><?= htmlspecialchars($objeto) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    
+                    <!-- Agregamos los nuevos campos: categoría, color, tamaño -->
+                    <p><strong>Categoría:</strong> <?= htmlspecialchars($publicacion['categoria']) ?></p>
+                    <p><strong>Color:</strong> <?= htmlspecialchars($publicacion['color']) ?></p>
+                    <p><strong>Tamaño:</strong> <?= htmlspecialchars($publicacion['tamaño']) ?></p>
+
+                    <!-- Muestra las imágenes si existen -->
+                    <?php if (!empty($publicacion['foto1'])): ?>
+                        <img class="found-item-image found-item-image-large" src="<?= htmlspecialchars($publicacion['foto1']) ?>" alt="Objetos encontrados" />
+                    <?php endif; ?>
+                    <?php if (!empty($publicacion['foto2'])): ?>
+                        <img class="found-item-image found-item-image-large" src="<?= htmlspecialchars($publicacion['foto2']) ?>" alt="Objetos encontrados" />
+                    <?php endif; ?>
+                    <?php if (!empty($publicacion['foto3'])): ?>
+                        <img class="found-item-image found-item-image-large" src="<?= htmlspecialchars($publicacion['foto3']) ?>" alt="Objetos encontrados" />
+                    <?php endif; ?>
+                </div>
+                <button class="claim-button">Este es mi objeto</button>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>  
+
+
+
+
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
