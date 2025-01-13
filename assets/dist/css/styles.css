@@ -8,7 +8,7 @@
 
 .fondo {
     top: 101px;
-    left: 305px;
+    left: 280px;
     background-color: var(--terciary-color);
     border-radius: 16px;
     padding: 40px;
@@ -29,7 +29,7 @@
     width: 363px;
     position: absolute;
     top: 70px;
-    left: 150px;
+    left: 120px;
     text-align: center;
 }
 
@@ -44,7 +44,7 @@
     width: 363px;
     position: relative;
     top: 180px;
-    left: 420px;
+    left: 350px;
     text-align: center;
 }
 
@@ -57,7 +57,7 @@
     width: 363px;
     position: relative !important;
     top: 140px;
-    left: 105px;
+    left: 70px;
     text-align: center;
 }
 

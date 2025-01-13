@@ -178,12 +178,29 @@ $result = $conexion->query($sql);
                             <input type="hidden" name="id_usuario" value="<?php echo $row['ID_usuario']; ?>">
                             <button type="submit" name="action" value="delete">Eliminar</button>
                         </form>
+                        <td>
+                        <span style="color: <?php echo $row['estado'] === 'activo' ? 'green' : 'red'; ?>">
+                          <?php echo ucfirst($row['estado']); ?>
+                        </span>
+                    </td>
+                    <td>
+                    <form action="Cambiar_Estado.php" method="POST" style="display: inline;">
+                    <input type="hidden" name="ID_usuario" value="<?php echo $row['ID_usuario']; ?>">
+                    <input type="hidden" name="nuevo_estado" value="<?php echo $row['estado'] === 'activo' ? 'inactivo' : 'activo'; ?>">
+                    <button type="submit">
+                        <?php echo $row['estado'] === 'activo' ? 'Desactivar' : 'Activar'; ?>
+                    </button>
+                    </form>
                     </td>
                 </tr>
+                
             <?php endwhile; ?>
         </tbody>
     </table>
 
+
+
+    
     <footer class="text-center text-white py-4" style="background-color: #333;">
     <div class="container">
       <p class="mb-0">&copy; 2024 Dolphin Telecommunication. Todos los derechos reservados.</p>

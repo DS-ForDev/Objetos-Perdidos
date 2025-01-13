@@ -28,102 +28,40 @@ session_start();
     </style>
 </head>
 <body>
-    <?php
-    include 'BD.php';
-    $conexion = new mysqli($servidor, $usuario, $contrasena, $basedatos);
-    if ($conexion->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+<?php
+include 'BD.php';
 
-    $Correo = $_POST['correo'];
-    $Contrasena = $_POST['contraseña'];
 
-    $sql = "SELECT * FROM usuario WHERE correo = ?";
-    $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("s", $Correo);
-    $stmt->execute();
-    $result = $stmt->get_result();
+$conexion = new mysqli($servidor, $usuario, $contrasena, $basedatos);
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
+}
 
-    if ($result->num_rows === 1) {
-        $user = $result->fetch_assoc();
-        if ($Contrasena == $user['Contraseña']) {
-            $_SESSION['nombre'] = $user['Nombre_de_Usuario'];
-            $_SESSION['correo'] = $user['Correo'];
-            ?>
-            <script>
-                Swal.fire({
-                    icon: 'success',
-                    title: '¡Bienvenido!',
-                    html: `<div style="font-size: 1.2em; margin-top: 10px;">
-                            Hola <b><?php echo $user['Nombre_de_Usuario']; ?></b><br>
-                            Has iniciado sesión correctamente
-                          </div>`,
-                    iconColor: '#4CAF50',
-                    showConfirmButton: false,
-                    timer: 2000,
-                    timerProgressBar: true,
-                    background: '#fff',
-                    backdrop: `
-                        rgba(0,123,255,0.1)
-                        left top
-                        no-repeat
-                    `,
-                    customClass: {
-                        popup: 'animated zoomIn'
-                    },
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                }).then(() => {
-                    window.location.href = '../carousel/Bienvenida.php';
-                });
-            </script>
-            <?php
-        } else {
-            ?>
-            <script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Acceso Denegado',
-                    html: '<div style="font-size: 1.1em;">La contraseña ingresada es incorrecta</div>',
-                    confirmButtonText: 'Intentar nuevamente',
-                    confirmButtonColor: '#3085d6',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    },
-                    background: '#fff',
-                    backdrop: `
-                        rgba(220,53,69,0.1)
-                        left top
-                        no-repeat
-                    `,
-                    showCloseButton: true,
-                    focusConfirm: false,
-                    allowOutsideClick: false
-                }).then(() => {
-                    window.location.href = 'login.php';
-                });
-            </script>
-            <?php
-        }
-    } else {
+$Correo = $_POST['correo'];
+$Contrasena = $_POST['contraseña'];
+
+$sql = "SELECT * FROM usuario WHERE correo = ?";
+$stmt = $conexion->prepare($sql);
+$stmt->bind_param("s", $Correo);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 1) {
+    $user = $result->fetch_assoc();
+
+    // Verificar estado del usuario
+    if ($user['estado'] !== 'activo') {
         ?>
         <script>
             Swal.fire({
-                icon: 'warning',
-                title: 'Usuario no encontrado',
+                icon: 'error',
+                title: 'Acceso Restringido',
                 html: `<div style="font-size: 1.1em;">
-                        El correo <b><?php echo htmlspecialchars($Correo); ?></b><br>
-                        no está registrado en nuestro sistema
+                        Tu cuenta está <b>inactiva</b>.<br>
+                        Por favor, contacta al administrador para más información.
                        </div>`,
-                confirmButtonText: 'Intentar nuevamente',
-                confirmButtonColor: '#ffc107',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#d33',
                 showClass: {
                     popup: 'animate__animated animate__fadeInDown'
                 },
@@ -132,7 +70,76 @@ session_start();
                 },
                 background: '#fff',
                 backdrop: `
-                    rgba(255,193,7,0.1)
+                    rgba(220,53,69,0.1)
+                    left top
+                    no-repeat
+                `,
+                showCloseButton: true,
+                focusConfirm: false,
+                allowOutsideClick: false
+            }).then(() => {
+                window.location.href = 'login.php';
+            });
+        </script>
+        <?php
+        exit();
+    }
+
+    // Verificar contraseña
+    if ($Contrasena == $user['Contraseña']) {
+        $_SESSION['nombre'] = $user['Nombre_de_Usuario'];
+        $_SESSION['correo'] = $user['Correo'];
+        ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '¡Bienvenido!',
+                html: `<div style="font-size: 1.2em; margin-top: 10px;">
+                        Hola <b><?php echo $user['Nombre_de_Usuario']; ?></b><br>
+                        Has iniciado sesión correctamente
+                      </div>`,
+                iconColor: '#4CAF50',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                background: '#fff',
+                backdrop: `
+                    rgba(0,123,255,0.1)
+                    left top
+                    no-repeat
+                `,
+                customClass: {
+                    popup: 'animated zoomIn'
+                },
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            }).then(() => {
+                window.location.href = '../carousel/Bienvenida.php';
+            });
+        </script>
+        <?php
+    } else {
+        ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Acceso Denegado',
+                html: '<div style="font-size: 1.1em;">La contraseña ingresada es incorrecta</div>',
+                confirmButtonText: 'Intentar nuevamente',
+                confirmButtonColor: '#3085d6',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                },
+                background: '#fff',
+                backdrop: `
+                    rgba(220,53,69,0.1)
                     left top
                     no-repeat
                 `,
@@ -145,9 +152,43 @@ session_start();
         </script>
         <?php
     }
-
-    $stmt->close();
-    $conexion->close();
+} else {
     ?>
+    <script>
+        Swal.fire({
+            icon: 'warning',
+            title: 'Usuario no encontrado',
+            html: `<div style="font-size: 1.1em;">
+                    El correo <b><?php echo htmlspecialchars($Correo); ?></b><br>
+                    no está registrado en nuestro sistema
+                   </div>`,
+            confirmButtonText: 'Intentar nuevamente',
+            confirmButtonColor: '#ffc107',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            },
+            background: '#fff',
+            backdrop: `
+                rgba(255,193,7,0.1)
+                left top
+                no-repeat
+            `,
+            showCloseButton: true,
+            focusConfirm: false,
+            allowOutsideClick: false
+        }).then(() => {
+            window.location.href = 'login.php';
+        });
+    </script>
+    <?php
+}
+
+$stmt->close();
+$conexion->close();
+?>
+
 </body>
 </html>
