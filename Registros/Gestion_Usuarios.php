@@ -150,6 +150,8 @@ $result = $conexion->query($sql);
                 <th>Dirección</th>
                 <th>Teléfono</th>
                 <th>Acciones</th>
+                <th colspan="2" style="text-align: center;">Estado</th>
+
             </tr>
         </thead>
         <tbody>
