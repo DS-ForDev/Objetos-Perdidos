@@ -84,6 +84,7 @@ $objetos = $statement->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </nav>
 </header>
+<br>
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Gestión de Objetos Perdidos</h1>
