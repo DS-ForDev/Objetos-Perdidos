@@ -575,49 +575,62 @@ text-decoration:
     </div>
 
     
-    <header>
+    <header><br>
+    <br>
+      <center><h1>Publicaciones</h1></center>
+      <br>
     <div class="container marketing">
-    <div class="lost-found-container">
+    <div class="row">
         <?php foreach ($publicaciones as $publicacion): ?>
-            <div class="post">
-                <div class="user-info">
-                    <!-- Por ahora, podemos omitir la imagen de perfil y el nombre del usuario -->
-                    <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
-                    <p><strong>Maria Tereza De Calcuta</strong></p>
-                    
-                    <span class="status">Estado: <?= htmlspecialchars($publicacion['estado']) ?></span>
-                </div><p>Hace un día</p>
-                <div class="description">
-                    <p><strong>Descripción:</strong> <?= htmlspecialchars($publicacion['descripcion']) ?></p>
-                    <ul>
-                        <!-- Aquí puedes añadir objetos si están separados por comas en la base de datos -->
-                        <?php
-                        $objetos = explode(",", $publicacion['descripcion']);
-                        foreach ($objetos as $objeto): ?>
-                            <li><?= htmlspecialchars($objeto) ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                    
-                    <!-- Agregamos los nuevos campos: categoría, color, tamaño -->
-                    <p><strong>Categoría:</strong> <?= htmlspecialchars($publicacion['categoria']) ?></p>
-                    <p><strong>Color:</strong> <?= htmlspecialchars($publicacion['color']) ?></p>
-                    <p><strong>Tamaño:</strong> <?= htmlspecialchars($publicacion['tamaño']) ?></p>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" class="card-img-top" alt="Profile">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= htmlspecialchars($publicacion['nombre']) ?></h5>
+                        <p class="card-text"><strong>Fecha:</strong> <?= date('d/m/Y', strtotime($publicacion['fecha_registro'])) ?></p>
+                        <p class="card-text"><strong>Estado:</strong> <?= htmlspecialchars($publicacion['estado']) ?></p>
+                        <p class="card-text"><strong>Descripción:</strong> <?= htmlspecialchars($publicacion['descripcion']) ?></p>
+                        
+                        <!-- Mostrar objetos separados por coma -->
+                        <ul>
+                            <?php
+                            $objetos = explode(",", $publicacion['descripcion']);
+                            foreach ($objetos as $objeto): ?>
+                                <li><?= htmlspecialchars($objeto) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
 
-                    <!-- Muestra las imágenes si existen -->
-                    <?php if (!empty($publicacion['foto1'])): ?>
-                        <img class="found-item-image found-item-image-large" src="<?= htmlspecialchars($publicacion['foto1']) ?>" alt="Objetos encontrados" />
-                    <?php endif; ?>
-                    <?php if (!empty($publicacion['foto2'])): ?>
-                        <img class="found-item-image found-item-image-large" src="<?= htmlspecialchars($publicacion['foto2']) ?>" alt="Objetos encontrados" />
-                    <?php endif; ?>
-                    <?php if (!empty($publicacion['foto3'])): ?>
-                        <img class="found-item-image found-item-image-large" src="<?= htmlspecialchars($publicacion['foto3']) ?>" alt="Objetos encontrados" />
-                    <?php endif; ?>
+                        <!-- Mostrar Categoría, Color y Tamaño -->
+                        <p><strong>Categoría:</strong> <?= htmlspecialchars($publicacion['categoria']) ?></p>
+                        <p><strong>Color:</strong> <?= htmlspecialchars($publicacion['color']) ?></p>
+                        <p><strong>Tamaño:</strong> <?= htmlspecialchars($publicacion['tamaño']) ?></p>
+
+                        <!-- Mostrar imágenes si existen -->
+                        <div class="gallery">
+                            <?php if (!empty($publicacion['foto1'])): ?>
+                                <img src="<?= htmlspecialchars($publicacion['foto1']) ?>" class="img-fluid" alt="Objeto encontrado" />
+                            <?php endif; ?>
+                            <?php if (!empty($publicacion['foto2'])): ?>
+                                <img src="<?= htmlspecialchars($publicacion['foto2']) ?>" class="img-fluid" alt="Objeto encontrado" />
+                            <?php endif; ?>
+                            <?php if (!empty($publicacion['foto3'])): ?>
+                                <img src="<?= htmlspecialchars($publicacion['foto3']) ?>" class="img-fluid" alt="Objeto encontrado" />
+                            <?php endif; ?>
+                        </div>
+
+                        <a href="#" class="btn btn-primary mt-2">Este es mi objeto</a>
+                    </div>
                 </div>
-                <button class="claim-button">Este es mi objeto</button>
             </div>
         <?php endforeach; ?>
     </div>
+    <div class="button-section">
+    <a href="../Registros/ObjPerdido.php" class="btn btn-primary mt-2">¿Perdiste un objeto? Publícalo aquí</a>
+    <a href="../Registros/ObjPerdido.php" class="btn btn-primary mt-2">¿Encontraste un objeto? Publícalo aquí</a>
+</div>
+<br>
+</div>
+
 </div>  
 
 
@@ -673,119 +686,6 @@ text-decoration:
   </header>
 
 <main>
-
-  <div class="container marketing">
-
-
-    <!-- START THE FEATURETTES -->
-
-    <div class="lost-found-container">
-<!-- SecciC3n de busqueda -->
-
-<br><br>
-
-<!-- Botones principales -->
-<div class="button-section">
-<button class="primary-button">¿Perdiste un objeto? Publícalo aquí</button>
-<button class="primary-button">¿Encontraste un objeto? Publícalo aquí</button>
-</div>
-
-<!-- Publicaciones -->
-
-<br>
-
-<!-- Publicacion 1 -->
-<div class="post">
-<div class="user-info">
-<img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
-Maria Tereza De Calcuta<br>Hace un día
-<span class="status">Estado: No Encontrado</span>
-</div>
-<div class="description">
-Se han encontrado varios objetos en un lugar publico en la biblioteca del "Tunal". Entre los objetos hay:
-<ul>
-<li>Un monedero negro con textura de cocodrilo.</li>
-<li>Dos llaves de auto con llaveros distintos.</li>
-<li>Un llavero en forma de anillo con tres llaves mC!s.</li>
-</ul>
-<img class="found-item-image found-item-image-large" src="https://objetos-perdidos.co/wp-content/uploads/2024/10/elementosperdidos.jpeg" alt="Objetos encontrados" />
-
-</div><button class="claim-button">Este es mi objeto</button>
-</div>
-<!-- Publicacion 2 -->
-<div class="post">
-<div class="user-info">
-<img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_160054836.png" alt="Profile" />
-Pepito Perez Ramirez<br>Hace 3 dias
-<span class="status encontrado">Estado: Encontrado</span>
-</div>
-<div class="description">
-Se encontraron varios objetos. Los objetos incluyen:
-<ul>
-<li>Un diario antiguo con un lomo de cuero gastado.</li>
-<li>Una guitarra electrica con una funda de guitarra.</li>
-<li>Una fotografC-a antigua enmarcada en plata.</li>
-<li>Una tarjeta de SFTP sin saldo.</li>
-</ul>
-<img class="found-item-image found-item-image-large" src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_160437076.png" alt="Objetos encontrados" />
-
-</div><button class="claim-button">Escribir reseña ★</button>
-</div>
-<!-- Publicacion 3 -->
-<div class="post">
-  <div class="user-info">
-  <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
-  Ana Paula Menéndez<br>Hace 2 días
-    <span class="status">Estado: No Encontrado</span>
-  </div>
-  <div class="description">
-    Se han encontrado varios objetos en un parque infantil en la colonia "Las Rosas". Entre los objetos hay:
-    <ul>
-      <li>Un llavero en forma de osito con una llave de candado.</li>
-      <li>Dos llaves de auto con llaveros de peluche.</li>
-      <li>Una pulsera de cuentas azules con un dije de estrella.</li>
-    </ul>
-    <img class="found-item-image found-item-image-large" src="https://objetos-perdidos.co/wp-content/uploads/2024/10/elementosperdidos.jpeg" alt="Objetos encontrados" />
-    </div>
-  <button class="claim-button">Este es mi objeto</button>
-</div>
-
-<!-- Publicacion 4 -->
-<div class="post">
-  <div class="user-info">
-    <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
-    Carlos Eduardo López<br>Hace 3 días
-    <span class="status encontrado">Estado: Encontrado</span>
-  </div>
-  <div class="description">
-    Se han encontrado varios objetos en un restaurante del centro comercial "Las Palmas". Entre los objetos hay:
-    <ul>
-      <li>Un llavero en forma de corazón con una llave de casillero.</li>
-      <li>Un estuche de lentes de sol negro.</li>
-      <li>Una billetera gris con tarjetas de crédito y efectivo.</li>
-    </ul> 
-    <img class="found-item-image found-item-image-large" src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_160437076.png" alt="Objetos encontrados" />
-
-</div><button class="claim-button">Escribir reseña ★</button>
-</div>
-
-<!-- Publicacion 5 -->
-<div class="post">
-  <div class="user-info">
-    <img src="https://objetos-perdidos.co/wp-content/uploads/2024/10/imagen_2024-10-06_161203595.png" alt="Profile" />
-    Lorena Martínez Ramírez<br>Hace 4 días
-    <span class="status">Estado: No Encontrado</span>
-  </div>
-  <div class="description">
-    Se han encontrado varios objetos en la cafetería de la universidad "San Marcos". Entre los objetos hay:
-    <ul>
-      <li>Un llavero de goma con una figura de unicornio.</li>
-      <li>Dos llaves de casa con un llavero de cuerda.</li>
-      <li>Un pequeño monedero azul con dibujos de flores.</li>
-    </ul>
-    <img class="found-item-image found-item-image-large" src="https://objetos-perdidos.co/wp-content/uploads/2024/10/objetos_perdidos3.jpeg" alt="Objetos encontrados" />
-  </div>
-  <button class="claim-button">Este es mi objeto</button>
 </div>
 </div>
 </div>
