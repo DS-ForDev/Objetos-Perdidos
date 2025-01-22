@@ -136,9 +136,9 @@ if (isset($_SESSION['nombre'])) {
                 <p>Mensajes</p>
                 <button>Ver más</button>
             </div>
-            <div class="card yellow">
-                <p>Gestion de Objetos</p>
-                <button>Ver más</button>
+            <div class="card green">
+                <p>Gestión de Objetos</p>
+                <a href="../Registros/gestion_objetos.php" class="green">Ver más</a>
             </div>
         </section>
 

@@ -588,7 +588,7 @@ text-decoration:
                     <div class="card-body">
                         <h5 class="card-title"><?= htmlspecialchars($publicacion['nombre']) ?></h5>
                         <p class="card-text"><strong>Fecha:</strong> <?= date('d/m/Y', strtotime($publicacion['fecha_registro'])) ?></p>
-                        <p class="card-text"><strong>Estado:</strong> <?= htmlspecialchars($publicacion['estado']) ?></p>
+                        <p class="card-text"><strong>Estado:</strong> <?= htmlspecialchars($publicacion['estado_id']) ?></p>
                         <p class="card-text"><strong>Descripción:</strong> <?= htmlspecialchars($publicacion['descripcion']) ?></p>
                         
                         <!-- Mostrar objetos separados por coma -->

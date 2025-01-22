@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : null;
 $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
 $color = isset($_POST['color']) ? $_POST['color'] : null;
-$tamaño = isset($_POST['tamaño']) ? $_POST['tamaño'] : null;
+$tamaño = isset($_POST['tamano']) ? $_POST['tamano'] : null;
 $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : null;
 
 // Directorio de subida

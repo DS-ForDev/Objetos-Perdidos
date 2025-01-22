@@ -69,10 +69,6 @@ if (isset($_SESSION['nombre'])) {
               <a class="nav-link" href="dashboard.php">Dashboard</a>
             </li>
           </ul>
-          <form class="d-flex me-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-            <button class="btn btn-outline-light" type="submit">Buscar</button>
-          </form>
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a class="nav-link " href="#" id="perfilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
