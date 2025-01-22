@@ -144,7 +144,6 @@ $result = $conexion->query($sql);
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Correo</th>
-                <th>Contraseña</th>
                 <th>Rol</th>
                 <th>Fecha de Nacimiento</th>
                 <th>Dirección</th>
@@ -160,7 +159,6 @@ $result = $conexion->query($sql);
                     <td><?php echo $row['ID_usuario']; ?></td>
                     <td><?php echo $row['Nombre_de_Usuario']; ?></td>
                     <td><?php echo $row['Correo']; ?></td>
-                    <td><?php echo $row['Contraseña']; ?></td>
                     <td><?php echo $row['ID_rol'] == 1 ? 'Administrador' : 'Usuario Registrado'; ?></td>
                     <td><?php echo $row['Fecha_de_Nacimiento']; ?></td>
                     <td><?php echo $row['Direccion']; ?></td>

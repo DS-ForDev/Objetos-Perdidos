@@ -51,7 +51,7 @@
                 Perfil
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
-                <li><a class="dropdown-item" href="/Registros/perfil.php">Ver perfil</a></li>
+                <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Ver perfil</a></li>
                 <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
                 <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
                 <li><hr class="dropdown-divider"></li>

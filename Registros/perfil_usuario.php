@@ -144,7 +144,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" data-bs-toggle="dropdown">Perfil</a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="/Registros/perfil.php">Ver perfil</a></li>
+                            <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Ver perfil</a></li>
                             <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
                             <li><a class="dropdown-item" href="/Registros/ObjPerdido.php">Publicar</a></li>
                             <li><a class="dropdown-item" href="/Registros/logout.php">Cerrar sesión</a></li>

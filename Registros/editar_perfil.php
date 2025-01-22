@@ -84,11 +84,11 @@
                 <form action="update_profile.php" method="POST">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="Henry Carvajal">
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="">
                     </div>
                     <div class="form-group">
                         <label for="correo">Correo Electrónico</label>
-                        <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingresa tu correo" value="henrycarvajal@gmail.com">
+                        <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingresa tu correo" value="">
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña</label>

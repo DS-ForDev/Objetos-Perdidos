@@ -5,7 +5,6 @@ session_start(); // Asegúrate de iniciar la sesión
 if (isset($_SESSION['nombre'])) {
     $usuario_id = $_SESSION['nombre'];
 } else {
-    // Si no está logueado, redirige o maneja el error
     echo "No estás logueado.";
     exit();
 }
@@ -29,13 +28,34 @@ $color = isset($_POST['color']) ? $_POST['color'] : null;
 $tamaño = isset($_POST['tamaño']) ? $_POST['tamaño'] : null;
 $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : null;
 
-// Validar archivos
-$foto1 = !empty($_FILES['foto1']['tmp_name']) ? file_get_contents($_FILES['foto1']['tmp_name']) : null;
-$foto2 = !empty($_FILES['foto2']['tmp_name']) ? file_get_contents($_FILES['foto2']['tmp_name']) : null;
-$foto3 = !empty($_FILES['foto3']['tmp_name']) ? file_get_contents($_FILES['foto3']['tmp_name']) : null;
+// Directorio de subida
+$uploadDir = "uploads/";
+if (!is_dir($uploadDir)) {
+    mkdir($uploadDir, 0777, true); // Crea el directorio si no existe
+}
 
-// Usuario que realiza la acción (obtenido de la sesión)
-$usuario_id = $_SESSION['nombre'];
+// Función para procesar y guardar las imágenes
+function uploadImage($file, $uploadDir) {
+    if (!empty($file['tmp_name']) && $file['error'] === UPLOAD_ERR_OK) {
+        $ext = pathinfo($file['name'], PATHINFO_EXTENSION); // Obtén la extensión
+        $allowed = ['jpg', 'jpeg', 'png', 'gif']; // Tipos permitidos
+
+        if (in_array(strtolower($ext), $allowed)) {
+            $newFileName = uniqid("img_", true) . '.' . $ext; // Genera un nombre único
+            $destination = $uploadDir . $newFileName;
+
+            if (move_uploaded_file($file['tmp_name'], $destination)) {
+                return $destination; // Retorna la ruta si se guardó correctamente
+            }
+        }
+    }
+    return null; // Retorna null si no se pudo guardar
+}
+
+// Guardar las imágenes
+$foto1 = uploadImage($_FILES['foto1'], $uploadDir);
+$foto2 = uploadImage($_FILES['foto2'], $uploadDir);
+$foto3 = uploadImage($_FILES['foto3'], $uploadDir);
 
 // Preparar consulta SQL
 $sql = "INSERT INTO objetos_perdidos (categoria, nombre, color, tamaño, descripcion, foto1, foto2, foto3) 

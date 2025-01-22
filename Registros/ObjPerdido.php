@@ -196,7 +196,7 @@ if (isset($_SESSION['nombre'])) {
               <p><?php echo htmlspecialchars($Nombre_de_Usuario); ?></p>
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
-                <li><a class="dropdown-item bi bi-file-person" href="/Registros/perfil.php">  </a>Ver perfil</li>
+                <li><a class="dropdown-item bi bi-file-person" href="/Registros/editar_perfil.php">  </a>Ver perfil</li>
                 <li><a class="dropdown-item" href="/Registros/editar_perfil.php">Configuración</a></li>
                 <li><a class="dropdown-item" href="../Registros/ObjPerdido.php">Publicar</a></li>
                 <li><a class="dropdown-item" href="../carousel/dashboard.php">Dashboard</a></li>
